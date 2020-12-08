@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+<div>소개 페이지</div>
 </template>
 
 <script>

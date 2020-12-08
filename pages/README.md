@@ -1,6 +1,8 @@
-# PAGES
+# Table of contents
 
-This directory contains your Application Views and Routes.
-The framework reads all the `*.vue` files inside this directory and creates the router of your application.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/routing).
+---
+- `/` : 게시물 리스트 + 바로가기 + 사이트 통계
+- `/about` : 이력사항 말고 내 소개와 사이트 소개
+- `/about/resume` : 이력서 + 이력사항
+- `logs` : 매일 개발한 내용을 간단하게 트위터 처럼 토막글로 남기자
+- `article` : 글 쓰기 연습

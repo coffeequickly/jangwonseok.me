@@ -1,10 +1,10 @@
 <template>
-  <div></div>
+<div>이력서</div>
 </template>
 
 <script>
 export default {
-  name: "index"
+  name: "resume"
 }
 </script>
 
