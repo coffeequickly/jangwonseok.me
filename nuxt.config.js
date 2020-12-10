@@ -49,7 +49,8 @@ export default {
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: [
-        {src : '~plugins/googleAnalytics.js', mode: 'client'}
+        {src : '~plugins/googleAnalytics.js', mode: 'client'},
+        {src : '~plugins/fetch.js', mode: 'client'},
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)

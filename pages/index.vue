@@ -15,13 +15,17 @@
 <script>
 export default {
     name: "index",
-    layout: 'default'
+    layout: 'default',
+    mounted() {
+        this.fetchAPI('GET', '/post/1').then(result => {
+            console.log(result);
+        });
+    }
 }
 </script>
 
 <style scoped lang="scss">
 @import 'assets/partialAsset';
-
 article{
     width:100%;
     height:100vh;
