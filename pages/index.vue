@@ -17,9 +17,10 @@ export default {
     name: "index",
     layout: 'default',
     mounted() {
-        this.fetchAPI('GET', '/post/1').then(result => {
-            console.log(result);
-        });
+        this.$store.dispatch('posts/getPost');
+        // this.fetchAPI('GET', '/posts').then(result => {
+        //     console.log(result.data);
+        // });
     }
 }
 </script>
