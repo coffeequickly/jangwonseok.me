@@ -6,15 +6,15 @@
                 <dt>Service-oriented Web Software Engineer</dt>
                 <div class="links">
                     <dd><a href="mailto:contact@jangwonseok.me">contact@jangwonseok.me</a></dd>
-                    <dd><a href="https://jangwonseok.me">jangwonseok.me</a></dd>
+                    <dd><nuxt-link to="/">jangwonseok.me</nuxt-link></dd>
                     <dd><a href="https://github.com/coffeequickly" target="_blank">github.com/coffeequickly</a></dd>
                 </div>
             </dl>
             <figure>
-
+                <img src="@/assets/Wonseok_Jang.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
             </figure>
         </header>
-        <table>
+        <table class="skills">
             <thead>
             <tr>
                 <th colspan="2">Skills</th>
@@ -23,19 +23,20 @@
             <tbody>
             <tr>
                 <th>Language Stacks</th>
-                <td>Javscript, CSS preprocessor(SCSS), HTML, vanilla PHP(and Wordpress)</td>
+                <td>Javscript, CSS preprocessor(SCSS), HTML, vanilla PHP</td>
             </tr>
             <tr>
                 <th>Front-end Stacks</th>
                 <td>Vue.js, Vuex, Nuxt.js, jQuery</td>
             </tr>
             <tr>
-                <th>Basic Computer Science Stacks</th>
+                <th>Basic Knowledge and Utility Stacks</th>
                 <td>Terminal Usage, HTTP/SSH Protocol, Git, Basic SQL Language <br/>Amazon Web Service EC2/S3/CloudFront<br/>Google Analytics, Tag Manager,Search Console</td>
             </tr>
             </tbody>
         </table>
-        <table>
+
+        <table class="experience">
             <thead>
             <tr>
                 <th>Experience</th>
@@ -48,7 +49,7 @@
                         <dt>주식회사 얼라인업 <a href="https://alignup.io" target="_blank">https://alignup.io</a></dt>
                         <dd class="about">HR-Tech 스타트업, 조직문화 관련 컨설팅과 HR 서비스 제공.<br/><strong>※ 현재 재직중</strong></dd>
                         <dd class="role">Front-end Web Developer(Individual Contributor) @ Service Development Team</dd>
-                        <dd class="duration">2020년 7월 - 재직중 | Seoul, South Korea</dd>
+                        <dd class="duration">2020년 7월 | Seoul, South Korea</dd>
                         <dd>
                             <p>레거시 서비스 수습, 서비스 마이그레이션 및 개발/운영환경 구축</p>
                             <ul>
@@ -95,8 +96,7 @@
                         <dd class="about">서경대학교 산하 학교기업으로, 학내 디지털, 비-디지털 콘텐츠 생산 및 운영을 담당하는 학내 에이전시.</dd>
                         <dd class="role">Web Developer - Web Development Team</dd>
                         <dd class="duration">2016년 8월 - 2017년 11월 | Seoul, South Korea</dd>
-                        <dd>HR-Tech 스타트업으로 조직문화 관련 서비스와 솔루션 개발을 주 사업으로 하고 있습니다.</dd>
-                        <dd>
+                        <dd class="works">
                             <p>웹팀 소속 개발자로 웹 사이트 개발 및 유지보수를 담당.</p>
                             <ul>
                                 <li>XpressEngine, Wordpress 를 사용한 사이트 개발, 유지보수</li>
@@ -110,7 +110,7 @@
             </tbody>
         </table>
 
-        <table>
+        <table class="education">
             <thead>
             <tr>
                 <th>Education</th>
@@ -122,14 +122,14 @@
                     <dl>
                         <dt>철학, 문학사 / 경희대학교</dt>
                         <dd>2008년 3월 - 2016년 6월</dd>
-                        <dd>2012년 2월 - 2014년 2월 공군 전투비행단 복무</dd>
+                        <dd>2010년 4월 - 2012년 4월 공군 전투비행단 복무</dd>
                     </dl>
                 </td>
             </tr>
             </tbody>
         </table>
 
-        <table>
+        <table class="award">
             <thead>
             <tr>
                 <th>Award and Qualification</th>
@@ -204,10 +204,28 @@ article{
                 justify-content: space-between;
                 margin:8px 0;
 
+                @media(max-width:$width-normal){
+                    flex-direction: column;
+                    line-height: 2;
+                }
+
                 dd{
                     margin:0;
                     padding:0;
                 }
+            }
+        }
+
+        figure{
+            display:block;
+            width:100%;
+            margin:32px 0 0;
+            padding:0;
+
+            img{
+                display:block;
+                width:100%;
+                height:auto !important;
             }
         }
     }
@@ -217,12 +235,35 @@ article{
         width:100%;
         margin-bottom:64px;
 
+
+        @media(max-width:$width-normal){
+            &.skills {
+                tbody {
+                    tr {
+                        display: block;
+                        margin-bottom: 16px;
+
+                        th, td {
+                            display: block;
+                            width: 100%;
+                            padding: 0;
+                        }
+
+                        th {
+                            margin-bottom: 2px;
+                        }
+                    }
+                }
+            }
+        }
+
         thead{
             tr{
                 th{
                     font-size:24px;
                     font-weight:bold;
                     letter-spacing: 0.5px;
+                    padding:16px 0;
                 }
             }
         }
@@ -237,7 +278,7 @@ article{
                 }
 
                 th{
-                    width:240px;
+                    width:260px;
                     font-weight:600;
                 }
 
@@ -256,6 +297,11 @@ article{
                                 font-size:12px;
                                 font-style: italic;
                                 font-weight:normal;
+
+                                @media (max-width : $width-normal) {
+                                    display:inline-block;
+                                    width:100%;
+                                }
                             }
                         }
 
