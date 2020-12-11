@@ -1,5 +1,7 @@
 <template>
-<article></article>
+<article>
+    <nuxt/>
+</article>
 </template>
 
 <script>
