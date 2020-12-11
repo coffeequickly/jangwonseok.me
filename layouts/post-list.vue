@@ -1,12 +1,10 @@
 <template>
-<article>
-    {{this.$route.params}}
-</article>
+<div></div>
 </template>
 
 <script>
 export default {
-    name: "_post"
+    name: "post-list"
 }
 </script>
 
