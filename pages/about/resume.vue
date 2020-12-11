@@ -323,7 +323,7 @@ article{
 
                             &.role, &.duration{
                                 font-weight:600;
-                                color:$color-gray-main;
+                                color:$color-dark-300;
                             }
 
                             &.role{

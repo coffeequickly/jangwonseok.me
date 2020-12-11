@@ -16,12 +16,6 @@
 export default {
     name: "index",
     layout: 'default',
-    mounted() {
-        this.$store.dispatch('posts/getPost');
-        // this.fetchAPI('GET', '/posts').then(result => {
-        //     console.log(result.data);
-        // });
-    }
 }
 </script>
 
@@ -66,7 +60,7 @@ article{
         li{
             margin:4px 0;
             padding:0;
-            color:$color-gray-light
+            color:$color-dark-200
         }
     }
 }
