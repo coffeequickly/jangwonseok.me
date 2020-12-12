@@ -11,7 +11,7 @@
                 </div>
             </dl>
             <figure>
-                <img src="@/assets/Wonseok_Jang.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
+                <img src="@/assets/jangwonseok.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
             </figure>
         </header>
         <table class="skills">
