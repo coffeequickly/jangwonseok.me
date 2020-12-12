@@ -1,5 +1,5 @@
 <template>
-    <div class="page-layout">
+    <div class="post-layout">
         <header-default/>
         <main id="content-wrap">
             <Nuxt/>
@@ -8,19 +8,14 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
-@import 'assets/partialAsset';
-
-#content-wrap{
-
-}
-</style>
 <script>
-
 import HeaderDefault from "~/layouts/_header";
 import FooterDefault from "~/layouts/_footer";
-
 export default {
     components: {FooterDefault, HeaderDefault}
 }
 </script>
+
+<style scoped>
+
+</style>
