@@ -1,8 +1,14 @@
 <template>
-<article>
-    <div>
+<article :class="{error : error.code !== 404}">
+    <div v-if="error.code === 404">
         <h1>아무 것도 없는 공간에 오신 것을 환영합니다!</h1>
         <p>아직 이 주소에는 아무런 내용이 없는 것 같습니다.</p>
+        <nuxt-link to="/">첫 화면으로 돌아가기</nuxt-link>
+    </div>
+    <div v-else>
+        <h1>뭔가..뭔가 오류가 발생한 것 같아요 🤦‍♂️</h1>
+        <p>디버깅은 개발자의 숙명인가 봅니다...</p>
+        <p>{{error.message}}</p>
         <nuxt-link to="/">첫 화면으로 돌아가기</nuxt-link>
     </div>
 </article>
@@ -29,6 +35,10 @@ article{
     display:flex;
     justify-content: center;
     align-items: center;
+
+    &.error{
+        background-color: $color-dark-200;
+    }
 
     div{
         display:flex;
