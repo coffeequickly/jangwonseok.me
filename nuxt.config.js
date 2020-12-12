@@ -51,6 +51,7 @@ export default {
     plugins: [
         {src : '~plugins/googleAnalytics.js', mode: 'client'},
         {src : '~plugins/fetch.js', mode: 'client'},
+        {src : '~plugins/svg-inline.js', mode: 'client'},
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -65,5 +66,28 @@ export default {
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
         publicPath: '/_core/',
+        extend (config, { isDev, isClient }) {
+
+            // Store Vue loaders
+            const vueLoader = config.module.rules.find(function (module) {
+                return module.test.toString() === '/\\.vue$/i'
+            })
+
+            // Remove SVG from default rules
+            config.module.rules.forEach((rule) => {
+                if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/i') {
+                    rule.test = /\.(png|jpe?g|gif|webp)$/i
+                }
+            })
+
+            // Add svg inline loader configuration
+            config.module.rules.push({
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            })
+
+            // Important to apply transforms on svg-inline:src
+            vueLoader.options.transformAssetUrls['svg-inline'] = 'src'
+        }
     }
 }
