@@ -1,11 +1,11 @@
 export const state = () => ({
-    list : [],
+    postList : [],
     post : null
 })
 
 export const mutations = {
     SET_LIST(state, payload){
-        state.list = payload;
+        state.postList = payload;
     },
 
     SET_POST(state, payload){
