@@ -4,7 +4,7 @@ export default {
     target: 'static',
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
-        title: 'Wonseok Jang - Service oriented Web Software Engineer',
+        title: 'Wonseok Jang - Service Oriented Web Software Engineer',
         meta: [
             {charset: 'utf-8'},
             {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -66,7 +66,7 @@ export default {
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
         publicPath: '/_core/',
-        extend (config, { isDev, isClient }) {
+        extend(config, {isDev, isClient}) {
 
             // Store Vue loaders
             const vueLoader = config.module.rules.find(function (module) {
@@ -75,7 +75,8 @@ export default {
 
             // Remove SVG from default rules
             config.module.rules.forEach((rule) => {
-                if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/i') {
+                console.log(rule);
+                if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp|avif)$/i') {
                     rule.test = /\.(png|jpe?g|gif|webp)$/i
                 }
             })
