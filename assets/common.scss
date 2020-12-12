@@ -11,7 +11,7 @@ html body{
     overflow-y: scroll;
     font-size:14px;
     line-height:1.5;
-    font-family: $font-serif;
+    font-family: $font-sans-serif;
     color:$color-dark-500;
 
 
@@ -31,6 +31,21 @@ html body{
     a{
         color:$color-green-light;
         text-decoration: underline;
+    }
+
+    .page-layout{
+        #content-wrap{
+            font-family: $font-serif;
+        }
+    }
+
+    #content-wrap{
+        margin:64px auto 0;
+        display:flex;
+        max-width:$width-normal;
+        padding:16px;
+        box-sizing: border-box;
+        font-weight:normal;
     }
 }
 
