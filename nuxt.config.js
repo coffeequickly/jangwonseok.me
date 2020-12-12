@@ -75,7 +75,6 @@ export default {
 
             // Remove SVG from default rules
             config.module.rules.forEach((rule) => {
-                console.log(rule);
                 if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp|avif)$/i') {
                     rule.test = /\.(png|jpe?g|gif|webp)$/i
                 }
