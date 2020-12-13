@@ -5,10 +5,6 @@
         </nuxt-link>
 
         <nuxt-link to="/logs" v-slot="{ href, navigate, isActive, isExactActive }">
-            <a :href="href" @click="navigate" :class="{'is-active' : isActive}">개발괴발</a>
-        </nuxt-link>
-
-        <nuxt-link to="/article" v-slot="{ href, navigate, isActive, isExactActive }">
             <a :href="href" @click="navigate" :class="{'is-active' : isActive}">탐구생활</a>
         </nuxt-link>
 
