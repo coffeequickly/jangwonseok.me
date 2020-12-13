@@ -25,18 +25,9 @@ Vue.prototype.fetchAPI = function(method, endpoint, data = null) {
 
     return new Promise((resolve, reject) => {
         fetchProtocol(axiosOptions).then(response => {
-            if(response.data.length === 0){
-                return $nuxt.error({ statusCode: 404, message: 'post not found' })
-            }else{
-                resolve(response)
-            }
+            resolve(response)
         }).catch(error => {
-            if(error.response.status === 404){
-                return $nuxt.error({ statusCode: 404, message: 'post not found' })
-            }else{
-                alert('이런! 오류가 발생한 것 같아요 🤔\n버그와 싸우러 갈 불쌍한 개발자를 응원해 주세요 ㅠㅠ\n※ '+error.response.data.message);
-                return false;
-            }
+            reject(error);
         })
     })
 }

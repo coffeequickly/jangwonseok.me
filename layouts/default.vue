@@ -21,6 +21,7 @@ import HeaderDefault from "~/layouts/_header";
 import FooterDefault from "~/layouts/_footer";
 
 export default {
+    name : 'default',
     components: {FooterDefault, HeaderDefault}
 }
 </script>

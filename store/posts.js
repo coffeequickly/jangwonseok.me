@@ -38,17 +38,17 @@ export const actions = {
 
             let endpoint = '/posts/';
 
-            console.log(category);
-
             if(category){
                 endpoint += '?categories=' + state.categories[category];
             }
 
             if(postId){
                 endpoint += postId;
+            }else if(category){
+                endpoint += '&per_page=100';
+            }else{
+                endpoint += '?per_page=100';
             }
-
-            // TODO : postType 분리되면 거기 맞게 endpoint 분기처리 해주어야 함.
 
             $nuxt.fetchAPI('GET', endpoint).then(result => {
                 if(postId){

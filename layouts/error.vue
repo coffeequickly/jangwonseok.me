@@ -31,7 +31,7 @@ article{
     width:100vw;
     height:100vh;
     overflow: hidden;
-    background-color: $color-green-main;
+    background-color: $color-green-600;
     display:flex;
     justify-content: center;
     align-items: center;

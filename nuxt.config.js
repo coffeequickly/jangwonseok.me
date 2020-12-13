@@ -52,6 +52,7 @@ export default {
         {src : '~plugins/googleAnalytics.js', mode: 'client'},
         {src : '~plugins/fetch.js', mode: 'client'},
         {src : '~plugins/svg-inline.js', mode: 'client'},
+        {src : '~plugins/routeIntercept.js', mode: 'client'},
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)

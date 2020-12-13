@@ -35,15 +35,56 @@ export default {
 @import 'assets/partialAsset';
 
 article.post{
+    width:100%;
+
     header{
         margin-bottom:64px;
+
+        @media(max-width:$width-normal){
+            margin-bottom:24px;
+        }
+
+        h1{
+            color:$color-dark-500;
+
+            @media(max-width:$width-normal){
+                margin-top:0;
+                font-size:18px;
+                word-break: keep-all;
+            }
+        }
     }
 
     .post-content{
+        width:100%;
+
+        @media(max-width:$width-normal){
+            font-size:13px;
+        }
+
+
         &::v-deep{
+            *{
+                color:$color-dark-300;
+            }
+
+            a{
+                word-break: break-all;
+            }
+
             ul{
+                @media(max-width:$width-normal){
+                    padding-left: 20px;
+                }
+
                 li{
                     margin-bottom:16px;
+
+                    @media(max-width:$width-normal){
+                        &::marker{
+                            font-size: 10px;
+                        }
+                    }
 
                     &:last-child{
                         margin-bottom:0;
@@ -62,6 +103,7 @@ article.post{
                 font-weight:bold;
                 border-radius: 4px;
                 font-size:13px;
+                word-break: break-all;
                 font-family: "Courier New", monospace;
             }
 
@@ -86,13 +128,17 @@ article.post{
 ul.list{
     list-style: none;
     margin:0;
-    padding:0;
+    padding:0 !important;
     width:100%;
 
     li{
         margin:0 0 32px;
         padding:0;
         width:100%;
+
+        @media(max-width:$width-normal){
+            margin-bottom:16px;
+        }
 
         &:last-child{
             margin-bottom:0;
@@ -107,17 +153,19 @@ ul.list{
             border-radius: 8px;
             border:1px solid $color-dark-100;
 
+            @media(max-width:$width-normal){
+                padding:16px;
+            }
+
+            &:hover{
+                border-color:$color-green-600;
+            }
+
 
             dl{
                 margin:0;
                 padding:0;
                 width:100%;
-
-                &:hover{
-                    dt, dd{
-                        color:inherit;
-                    }
-                }
 
                 dt{
                     margin:0 0 16px;
@@ -126,6 +174,10 @@ ul.list{
                     color:$color-dark-500;
                     font-weight:bold;
                     word-break: keep-all;
+
+                    @media(max-width:$width-normal){
+                        word-break: break-all;
+                    }
                 }
 
                 dd{

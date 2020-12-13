@@ -10,9 +10,6 @@
                     <dd><a href="https://github.com/coffeequickly" target="_blank">github.com/coffeequickly</a></dd>
                 </div>
             </dl>
-            <figure>
-                <img src="@/assets/jangwonseok.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
-            </figure>
         </header>
         <table class="skills">
             <thead>
@@ -215,19 +212,6 @@ article{
                 }
             }
         }
-
-        figure{
-            display:block;
-            width:100%;
-            margin:32px 0 0;
-            padding:0;
-
-            img{
-                display:block;
-                width:100%;
-                height:auto !important;
-            }
-        }
     }
 
     table{
@@ -311,7 +295,7 @@ article{
 
                             strong{
                                 font-weight:600;
-                                color:$color-green-light;
+                                color:$color-green-400;
                                 font-size:12px;
                             }
 
