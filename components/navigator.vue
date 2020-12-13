@@ -17,7 +17,7 @@
         </nuxt-link>
 
         <nuxt-link to="/about" v-slot="{ href, navigate, isActive, isExactActive }">
-            <a :href="href" @click="navigate" :class="{'is-active' : isActive}">장원석에 대해</a>
+            <a :href="href" @click="navigate" :class="{'is-active' : isActive}">어바웃</a>
         </nuxt-link>
     </nav>
 </template>
@@ -31,23 +31,23 @@ export default {
 <style scoped lang="scss">
 @import 'assets/partialAsset';
 
-a{
-    margin-left:8px;
-    color:$color-green-main;
-    display:inline-block;
-    padding:4px 16px;
+a {
+    margin-left: 8px;
+    color: $color-green-600;
+    display: inline-block;
+    padding: 2px 12px;
     box-sizing: border-box;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 
-&:before{
-     content:'# '
- }
+    &:before {
+        content: '# '
+    }
 
-&:hover, &.is-active{
-              background-color: $color-green-main;
-              color:$color-light-100;
-              transition: all 0.3s ease-in-out;
-          }
+    &:hover, &.is-active {
+        background-color: $color-green-600;
+        color: $color-light-100;
+        transition: all 0.3s ease-in-out;
+    }
 }
 </style>
