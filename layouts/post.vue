@@ -36,8 +36,12 @@ export default {
     display:flex;
     flex-direction: row;
 
+    @media(max-width:$width-normal){
+        display:none;
+    }
+
     a{
-        color:$color-light-100;
+        color:transparent;
         font-size:12px;
         text-decoration: none;
         font-weight:100;

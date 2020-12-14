@@ -3,16 +3,18 @@
         <header>
             <h1>Wonseok Jang</h1>
             <dl>
-                <dt>Service-oriented Web Software Engineer</dt>
+                <dt>Service-Oriented Web Software Engineer</dt>
                 <div class="links">
                     <dd><a href="mailto:contact@jangwonseok.me">contact@jangwonseok.me</a></dd>
                     <dd><nuxt-link to="/">jangwonseok.me</nuxt-link></dd>
                     <dd><a href="https://github.com/coffeequickly" target="_blank">github.com/coffeequickly</a></dd>
                 </div>
             </dl>
+            <!--
             <figure>
                 <img src="@/assets/jangwonseok.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
             </figure>
+            -->
         </header>
 
         <div class="notice">

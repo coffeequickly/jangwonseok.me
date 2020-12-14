@@ -1,7 +1,11 @@
 <template>
     <article>
+        <figure>
+            <img src="@/assets/jangwonseok.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
+        </figure>
         <div class="notice">
-            <p>개발자로서 어떻게 지내왔는지 반성하기 위해 이 공간을 만들었습니다. <br/>2016년 부터 서울에서 웹 프로그래밍을 하고 있습니다. 문과 출신 철학 전공 순수 문돌이 개발자 입니다.</p>
+            <p>넓지만 아직은 얕게 배워가고 있습니다.</p>
+            <p>2016년 부터 서울에서 웹 프로그래밍을 하고 있습니다.</p>
         </div>
         <dl class="quick">
             <dt>저에 대해 궁금하시다면</dt>
@@ -44,7 +48,19 @@ export default {
 @import 'assets/partialAsset';
 article{
     width:100%;
-    font-family: $font-sans-serif;
+    //min-height:calc(100vh - (64px + 48px));
+    //font-family: $font-sans-serif;
+
+    figure{
+        padding:0;
+        margin:0 0 16px;
+
+        img{
+            display:block;
+            width:100%;
+            height:auto !important;
+        }
+    }
 
     dl{
         margin:0 0 16px;

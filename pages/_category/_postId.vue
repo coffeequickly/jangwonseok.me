@@ -97,7 +97,7 @@ article.post{
                 align-content: center;
                 color:$color-red;
                 background-color: $color-light-200;
-                border:1px solid $color-dark-100;
+                border:1px solid $color-light-300;
                 padding:0 8px;
                 box-sizing: border-box;
                 font-weight:bold;
@@ -151,7 +151,7 @@ ul.list{
             padding:24px 32px;
             text-decoration: none;
             border-radius: 8px;
-            border:1px solid $color-dark-100;
+            border:1px solid $color-light-300;
 
             @media(max-width:$width-normal){
                 padding:16px;

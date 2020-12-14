@@ -3,7 +3,7 @@
         <header>
             <h1>Wonseok Jang</h1>
             <dl>
-                <dt>Service-oriented Web Software Engineer</dt>
+                <dt>Service-Oriented Web Software Engineer</dt>
                 <div class="links">
                     <dd><a href="mailto:contact@jangwonseok.me">contact@jangwonseok.me</a></dd>
                     <dd><nuxt-link to="/">jangwonseok.me</nuxt-link></dd>
@@ -74,11 +74,11 @@
                                 <li>Wordpress 등 CMS를 활용한 사이트와 커뮤니티 개발, PHP 를 사용한 온라인 시험 플랫폼 개발 및 운영</li>
                                 <li>H.264 + Video.js + Nginx 활용한 HLS/RTSP 스트리밍 환경 구축</li>
                                 <li>AWS S3, Lambda, Serverless 활용한 공무원 기출문제 다운로드 + PDF 병합 시스템 시스템 개발</li>
-                                <li>키오스크 화면 개발과 VAN OCX 연동, 서비스 VAN/PG 연동</li>
+                                <li>키오스크 화면 개발과 VAN OCX 연동, 서비스 VAN/PG 연동 <a href="https://www.behance.net/gallery/95675817/nangong-kiosk-ui-design" target="_blank">Behance - Nangong Kiosk</a></li>
                                 <li>Nuxt.js(Vue.js)를 사용해 자체 학원 운영 LMS 개발</li>
                                 <li>Raspberry pi 와 QR 바코드 리더를 활용한 출석체크 클라이언트 개발</li>
                                 <li>leaflet.js 활용한 좌석관리시스템 개발</li>
-                                <li>Cordova Framework 사용한 크로스 플랫폼 애플리케이션 개발, 출시</li>
+                                <li>Cordova Framework 사용한 크로스 플랫폼 애플리케이션 개발, 출시  <a href="https://www.behance.net/gallery/95515307/my-nangong-App" target="_blank">Behance - My Nangong App'</a></li>
                                 <li>위메스 M&A 기술 관련 인계 담당</li>
                             </ul>
                         </dd>
@@ -271,22 +271,29 @@ article{
                         margin:0;
                         padding:0;
 
+                        a{
+                            font-size:12px;
+                            font-style: italic;
+                            font-weight:normal;
+                            color:$color-green-500;
+                            background-color: $color-green-200;
+
+                            &:hover{
+                                background-color: $color-green-300;
+                                color:$color-green-600;
+                            }
+
+                            @media (max-width : $width-normal) {
+                                display:inline-block;
+                                width:auto;
+                            }
+                        }
+
                         dt{
                             font-size:18px;
                             font-weight:600;
                             margin-bottom:8px;
                             padding:0;
-
-                            a{
-                                font-size:12px;
-                                font-style: italic;
-                                font-weight:normal;
-
-                                @media (max-width : $width-normal) {
-                                    display:inline-block;
-                                    width:100%;
-                                }
-                            }
                         }
 
                         dd{

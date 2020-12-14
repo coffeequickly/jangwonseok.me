@@ -127,7 +127,7 @@ header {
             width:100% !important;
             margin:0;
             padding:8px;
-            border-bottom:1px solid $color-dark-100;
+            border-bottom:1px solid $color-light-300;
 
             &:last-child{
                 border-bottom:0;
