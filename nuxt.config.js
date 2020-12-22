@@ -1,3 +1,4 @@
+const nodeExternals = require('webpack-node-externals')
 export default {
     // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
     ssr: false,
@@ -11,7 +12,7 @@ export default {
             {
                 hid: 'description',
                 name: 'description',
-                content: '저는 남들보다는 조금 더 여러가지 수식어와 범주에 걸쳐 있는 개발자입니다. 서비스 중심의 개발을 지향합니다.'
+                content: '포지션 경계가 명확해도 잘 하지만, 경계가 없으면 할 수 있는게 더 많습니다. 혼자 보다는 여럿이 함께 문제를 해결하는 것을 더 좋아하고, 새로운 것을 배우는데 두려워 하지 않습니다. 말 하는 것을 좋아하고 듣는 것도 더 좋아합니다. 사실 생각하고 만드는 걸 더 좋아하는데, 어쩌면 개발자가 천직인지도 모르겠습니다. '
             },
             {
                 hid: 'og:image',
@@ -34,7 +35,8 @@ export default {
             {rel: 'icon', type: 'image/png', sizes: '96x96', href: '/meta/favicon/favicon-96x96.png'},
             {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/meta/favicon/favicon-16x16.png'},
             {rel: 'icon', type: 'image/png', sizes: '192x192', href: '/meta/favicon/android-icon-192x192.png'},
-            {rel: 'icon', type: 'image/png', sizes: '192x192', href: '/meta/favicon/android-icon-192x192.png'}
+            {rel: 'icon', type: 'image/png', sizes: '192x192', href: '/meta/favicon/android-icon-192x192.png'},
+            {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Noto+Serif+KR:wght@400;600;900&display=swap'}
         ]
     },
 
@@ -67,8 +69,7 @@ export default {
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
         publicPath: '/_core/',
-        extend(config, {isDev, isClient}) {
-
+        extend(config, {isDev, isClient, isServer}) {
             // Store Vue loaders
             const vueLoader = config.module.rules.find(function (module) {
                 return module.test.toString() === '/\\.vue$/i'
@@ -89,6 +90,14 @@ export default {
 
             // Important to apply transforms on svg-inline:src
             vueLoader.options.transformAssetUrls['svg-inline'] = 'src'
+
+            if (isServer) {
+                config.externals = [
+                    nodeExternals({
+                        allowlist: [/\.(?!(?:js|json|svg)$).{1,5}$/i, /^vue-awesome/]
+                    })
+                ]
+            }
         }
     }
 }

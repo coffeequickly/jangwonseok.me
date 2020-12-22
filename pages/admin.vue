@@ -5,8 +5,8 @@
 <script>
 export default {
     name: "admin",
-    beforeCreate() {
-        location.href = "https://api.jangwonseok.me/wp-admin"
+    mounted() {
+        window.location.href = "https://api.jangwonseok.me/wp-admin"
     }
 }
 </script>

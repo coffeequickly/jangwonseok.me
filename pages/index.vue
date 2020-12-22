@@ -12,7 +12,6 @@
             <dd>
                 <ul>
                     <li><nuxt-link to="/about">소개 바로가기</nuxt-link></li>
-                    <li><a href="https://www.notion.so/jangwonseok/f32188d145e3413da7bd38df8b4131a2" target="_blank">(구)소개 - Notion 으로 이동합니다.</a></li>
                     <li><a href="mailto:contact@jangwonseok.me">contact@jangwonseok.me</a></li>
                     <li><a href="https://github.com/coffeequickly" target="_blank">github.com/coffeequickly</a></li>
                 </ul>
