@@ -1,12 +1,32 @@
 <template>
-    <article v-if="this.$store.state.posts.post" class="post">
-        <header class="post-header">
-            <h1 v-html="this.$store.state.posts.post.title.rendered"></h1>
-        </header>
-        <section class="post-content" v-html="this.$store.state.posts.post.content.rendered"></section>
-    </article>
+    <div v-if="this.$store.state.posts.loading" style="width:100%;">
+        <div  v-if="this.$route.params.postId && this.$route.params.category">
+            <header class="post-header">
+                <h1><PuSkeleton :count="1" height="84px" width="100%"/></h1>
+            </header>
+            <section class="post-content">
+                <PuSkeleton :count="1" height="1000px" width="100%"/>
+            </section>
+        </div>
 
-    <ul v-else-if="this.$store.state.posts.postList" class="list">
+        <ul class="list">
+            <li v-for="n in 10">
+                <PuSkeleton :count="1" height="150px" width="100%"/>
+            </li>
+        </ul>
+    </div>
+
+<!--    <div v-if="this.$route.params.postId && this.$route.params.category">-->
+        <article v-else-if="this.$store.state.posts.post" class="post">
+            <header class="post-header">
+                <h1 v-html="this.$store.state.posts.post.title.rendered"></h1>
+            </header>
+            <section class="post-content" v-html="this.$store.state.posts.post.content.rendered"></section>
+        </article>
+<!--    </div>-->
+
+
+    <ul v-else class="list">
         <li v-for="(list, index) in this.$store.state.posts.postList" :key="index">
             <nuxt-link :to="$route.params.category+'/'+list.id">
                 <dl>

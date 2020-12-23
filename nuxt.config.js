@@ -1,5 +1,5 @@
 const nodeExternals = require('webpack-node-externals')
-export default {
+module.exports = {
     // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
     ssr: false,
     target: 'static',
@@ -55,6 +55,7 @@ export default {
         {src : '~plugins/fetch.js', mode: 'client'},
         {src : '~plugins/svg-inline.js', mode: 'client'},
         {src : '~plugins/routeIntercept.js', mode: 'client'},
+        {src : '~plugins/skeleton.js', mode: 'client'},
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)

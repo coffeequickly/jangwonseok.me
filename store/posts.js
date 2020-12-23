@@ -1,7 +1,8 @@
 export const state = () => ({
     postList : [],
     post : null,
-    categories : []
+    categories : [],
+    loading : false
 })
 
 export const mutations = {
@@ -12,25 +13,38 @@ export const mutations = {
     SET_POST(state, payload){
         state.post = payload;
     },
+
     SET_CATEGORIES(state, payload){
         state.categories = payload;
+    },
+
+    SET_LOADING(state, payload){
+        if(payload === false){
+            setTimeout(()=>{
+                state.loading = payload;
+            }, 300);
+        }else{
+            state.loading = payload;
+        }
     }
 }
 
 export const actions = {
     async getCategories({commit}){
+        commit('SET_LOADING', true);
         await $nuxt.fetchAPI('GET', '/categories').then(result =>{
             let categoryArrange = {};
             result.data.forEach(item => {
                 categoryArrange[item.slug] = item.id;
             })
-
+            commit('SET_LOADING', false);
             commit('SET_CATEGORIES', categoryArrange);
         });
     },
 
 
     async getPost({state, commit, dispatch}, {category, postId}){
+        commit('SET_LOADING', true);
 
         await dispatch('getCategories').then(() =>{
             commit('SET_POST', null);
@@ -56,6 +70,8 @@ export const actions = {
                 }else{
                     commit('SET_LIST', result.data);
                 }
+
+                commit('SET_LOADING', false);
             })
         })
     },

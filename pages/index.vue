@@ -20,7 +20,12 @@
         <dl class="post-list">
             <dt>작성한 글타래</dt>
             <dd>
-                <ul>
+                <ul v-if="this.$store.state.posts.loading">
+                    <li v-for="n in 10">
+                        <PuSkeleton :count="2" height="20px"/>
+                    </li>
+                </ul>
+                <ul v-else>
                     <li v-for="(list, index) in this.$store.state.posts.postList" :key="index">
                         <nuxt-link :to="Object.keys($store.state.posts.categories).find(key => {return $store.state.posts.categories[key] === list.categories[0]}) + '/' + list.id" v-html="list.title.rendered"></nuxt-link>
                     </li>
