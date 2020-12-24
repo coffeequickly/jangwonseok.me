@@ -10,61 +10,54 @@
                     <dd><a href="https://github.com/coffeequickly" target="_blank">github.com/coffeequickly</a></dd>
                 </div>
             </dl>
-            <!--
-            <figure>
-                <img src="@/assets/jangwonseok.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
-            </figure>
-            -->
         </header>
-
         <div class="notice">
-            <p>저의 이력은 <nuxt-link to="/about/resume">이력서</nuxt-link> 페이지에서 확인할 수 있습니다.</p>
-            <p>Google Docs Ver : <a href="https://docs.google.com/document/d/1DTs19cAgp9FUdSeS1zBliKbzDh4718ZskaB4siU4qm4/edit#" target="_blank">장원석.gdoc</a></p>
+            <p>제 소개는 <a href="/introduce.pdf" target="_blank">introduction.pdf</a> 파일에서 확인해 주세요 😀</p>
         </div>
-
-        <table>
+        <table class="skills">
+            <thead>
+            <tr>
+                <th colspan="2">Skills</th>
+            </tr>
+            </thead>
             <tbody>
             <tr>
-                <td>
-                    <dl>
-                        <dd>
-                            <p>포지션이 명확해도 잘 하지만, 경계가 없으면 할 수 있는게 더 많습니다. 혼자 보다는 여럿이 함께 문제를 해결하는 것을 더 좋아하고, 새로운 것을 배우는데 두려워 하지 않습니다. 말 하는 것을 좋아하고 듣는 것도 더 좋아합니다. 사실 생각하고 만드는 걸 더 좋아하는데, 어쩌면 개발자가 천직인지도 모르겠습니다.</p>
-                        </dd>
-                    </dl>
-                </td>
+                <th>Language Stacks</th>
+                <td>Javscript, CSS preprocessor(SCSS), HTML, vanilla PHP</td>
             </tr>
+            <tr>
+                <th>Front-end Stacks</th>
+                <td>Vue.js, Vuex, Nuxt.js, jQuery</td>
+            </tr>
+            <tr>
+                <th>Basic Knowledge and Utility Stacks</th>
+                <td>Terminal Usage, HTTP/SSH Protocol, Git, Basic SQL Language <br/>Amazon Web Service EC2/S3/CloudFront<br/>Google Analytics, Tag Manager,Search Console</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="experience">
+            <thead>
+            <tr>
+                <th>Experience</th>
+            </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td colspan="2">
                     <dl>
-                        <dt>제 프로필을 열어 주셔서 감사합니다.</dt>
+                        <dt>주식회사 얼라인업 <a href="https://alignup.io" target="_blank">https://alignup.io</a></dt>
+                        <dd class="about">HR-Tech 스타트업, 조직문화 관련 컨설팅과 HR 서비스 제공.<br/><strong>※ 현재 재직중</strong></dd>
+                        <dd class="role">Front-end Web Developer(Individual Contributor) @ Service Development Team</dd>
+                        <dd class="duration">2020년 7월 | Seoul, South Korea</dd>
                         <dd>
-                            <p>코드 잘 짜고 맡은 포지션에만 몰두하는 사람을 찾으신다면 저는 어울리지 않을지도 모릅니다. 저는 정석대로 컴퓨터 사이언스를 배운 것도 아니고, 알고리즘을 따로
-                                공부한 적도 없습니다. 혹시 위에 쓴 성격이 회사에 어울린다거나 짧은 경력에 다양한 사건 사고를 경험한 굳은살 같은 구성원을 찾고 계셨다면, 아래 토막글 몇
-                                개를 준비했습니다.</p>
-                            <p>채용 담당으로, 인터뷰어로 업무하면서 채용에 있어 가장 힘든 작업은 수 많은 이력서와 자기소개서를 읽어가면서 필터링 했던 작업이었던 것 같습니다. A4 용지
-                                네 장 정도 되는 글 입니다. 차 한잔 하면서 미디엄 글 하나 본다는 생각으로 읽어 주시면 감사하겠습니다.</p>
-                            <p>매번 프로필을 적어 내려갈 때가 되면, 항상 다른 마음가짐으로 글을 쓰곤 합니다. 첫 취업을 고민할 때는 어떻게서든지 “내가 이렇게 훌륭하게 코드를 짤 수
-                                있다!” 라고 표현하기 위해 고민했고, 첫 경력 이직에서는 “내가 이렇게 가치 있는 사람이다” 고 설득하려 노력했습니다. 이번에는 기술적인 이야기 보다는
-                                “같이 즐겁게 일할 수 있는 동료”를 몇 가지 주제에 걸쳐 적어 내려가려 합니다.</p>
-                        </dd>
-                    </dl>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <dl>
-                        <dt>여러 키워드와 범주에 걸쳐 있는</dt>
-                        <dd>
-                            <p>변수나 컬럼명 정하는 것 처럼 스스로를 소개를 한다는 것은 참 어렵습니다. 보통 저에게 붙어있는 꼬리표들을 들어 설명하곤 하는데, 길기도 짧기도 한 5년 여간의 경력이지만, 많은 이야기 주제를 가지고 있습니다. </p>
+                            <p>레거시 서비스 수습, 서비스 마이그레이션 및 개발/운영환경 구축</p>
                             <ul>
-                                <li>순수 문과 철학과 출신 개발자</li>
-                                <li>사원 부터 회사 개발 총괄 , Individual Contributor 부터 Team Leader 사이를 넘나든</li>
-                                <li>에이전시와 인하우스, 스타트업과 유가증권 상장사 까지 골고루 맛 본</li>
-                                <li>UI/UX 디자인과 디지털 마케팅에 관심 있는 개발자</li>
-                                <li>조직, 개발 문화에 적극적인 개발자</li>
-                                <li>레거시 부터 모던 스택 까지 관심이 있는 개발자</li>
+                                <li>태니지먼트 시스템(얼라인업) 레거시 수습</li>
+                                <li>Wordpress 를 사용한 alignup.io 사이트 개발</li>
+                                <li>Nuxt.js(Vue.js)를 사용한 alignup 서비스 Front-end 개발</li>
+                                <li>Github Action + AWS S3, Cloudfront 활용한 Front-end 배포 CI 환경 구축</li>
                             </ul>
-                            <p>개발을 한다는 것은 마치 대학과 대학원을 다니는 것과 비슷하다고 생각합니다. 여러 기초 과목들을 걸쳐 흥미가 생기고 그 흥미가 문제의식을 만들고 집중하게 되는. 아직은 다양한 경험을 하고 싶고, 스스로 울타리를 치지 않았기 때문에 좀 더 유연한 사람이라 생각합니다. 저는 유연하게 여러 환경에 적응할 수 있는 사람입니다. 좀 더 집중할 분야를 위해 새로운 너머를 탐하고 스스로 문제의식을 찾아 발전시켜 나가고 있습니다.</p>
                         </dd>
                     </dl>
                 </td>
@@ -72,88 +65,24 @@
             <tr>
                 <td colspan="2">
                     <dl>
-                        <dt>개발자의 개밥먹기에 대해</dt>
-                        <dd>
-                            <p>웹 에이전시에서는 60여개의 사이트를 관리했고, 짧은 기간동안 몇 개의 사이트를 개발했습니다. 에이전시가 그렇듯 찍어내기식 프로젝트로 업무를 하던 어느날 현자타임이 찾아옵니다.</p>
-                            <p>고슴도치도 내 새끼는 귀엽다고, 내 산출물을 아끼며 계속 발전시킬 수 있는 회사로 옮기게 됩니다.</p>
-                            <p>1인 팀을 시작해 사원 넷으로 구성된 부서의 장이 되어 2년간 서비스를 운영/개발했고, M&A로 사업이 종료된 후 HR-Tech 스타트업으로 이직하게 됩니다.</p>
-                            <p>이직 전 까지 네 자리에 육박하는 CRM을 하게 되는데, 이 때 부터 서비스 중심의 개발과 LEAN 방식의 빠른 서비스 개발이 중요하다고 생각하기 시작합니다.</p>
-                        </dd>
-                    </dl>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <dl>
-                        <dt>겁 없이 발을 담그고, 겁 없이 도전하는</dt>
-                        <dd>
-                            <p>과학자가 되고 싶은 꿈을 가졌던 소년은 종로학평 모의고사 수학 9등급과 함께 현실의 벽 앞에서 꿈을 잃고 인문학의 문을 엽니다. 다행스럽게도 좋은 선택으로
-                                입학한 철학과는(점수에 맞춰 들어간), 글 쓰고, 말하고, 남들과 의견을 나누는 방법을 가르쳐 줍니다. 2015년, 장학금을 미끼로 한 학과장님의 제안에 낚여
-                                워드프레스로 사이트를 만들기 시작한게 문제의 화근입니다. 프로 공무원 준비생이 되어 공무원 실제로 시험도 보았지만, 시험장을 나오면서 원래 하려던 내 꿈이
-                                뭐였는지 반성하고 다음날 부터 내가 좋아하는 일로 밥 벌어 먹을 준비를 시작합니다.</p>
-                            <p>프로그래밍도 모른다는 멸시를 곱씹으며(Html is not programing language) 언젠가는 개발자로 인정받고 말겠다는 다짐을 했고, 겨우 졸업
-                                전 에이전시에 취업하면서 개발자로서의 커리어가 시작됩니다.</p>
-                            <p>개발자의 시작도 겁 없이 전공자와 경쟁하면서 전공자의 벽에 부딪치면서 시작했고, 퍼블리셔라는 포지션의 벽을 넘어가는 것도, 사원에서 팀장이라는 자리에 뛰어 든
-                                것도, 중견기업에서 나와 스타트업으로 도전 한 것도 가만히 있어서는 아무 것도 변하지 않는 다는 생각을 했기 때문에 가능했다 생각합니다.</p>
-                        </dd>
-                    </dl>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <dl>
-                        <dt>얕고 넓은 풀 스택이라도 맞 들면 낫다</dt>
-                        <dd>
+                        <dt>주식회사 위메스</dt>
+                        <dd class="about">Edu-tech 기업, 교육서적 출판으로 2017년 부터 학원 및 독서실 오프라인 사업과 온라인 교육 콘텐츠 사업 시작.<br/><strong>※ 메가스터디교육으로 M&A 흡수합병(2020년 7월)</strong></dd>
+                        <dd class="role">Chief Technology Officer <br/>Development Leader @ System Development Dept'</dd>
+                        <dd class="duration">2017년 11월 - 2020년 7월 | Seoul, South Korea</dd>
+                        <dd class="works">
+                            <p>온/오프라인 신사업 기술 총괄</p>
                             <ul>
-                                <li>퍼블리셔로 에이전시에서 시작하다 보니 프론트에서 처리가 안되면 자연스럽게 Wordpress 구조와 PHP를 건드리게 됩니다. SQL은
-                                    덤이었습니다.
-                                </li>
-                                <li>덕분에 프레임워크 구조에 익숙해지고, Role 보다는 거시적으로 프로젝트나 업무를 바라보게 됩니다.</li>
-                                <li>서버가 온프레미스 Centos 였는데, 살아 남으려면 명령어라도 외워야 했고 486 컴퓨터 DOS M-DIR 부터 썼던 저는 자연스럽게 커맨드 라인
-                                    환경에 익숙해집니다.
-                                </li>
-                                <li>PHP 개발환경을 바꿔야 한다고 해서 이것 저것 알아보고 다녔는데(마치 이클립스+bat 스크립트의 그것을 위해), 찾게 된게 Docker 였고,
-                                    2017년도 부터 지금 까지 컨테이너 환경을 이해하는데 바탕이 됩니다.
-                                </li>
-                            </ul>
-                            <p>다양한 경험이 지금의 스택들을 만들게 되었다고 생각합니다. 하다 못해 랜 선 찍어본 경험도, 사무실 네트워크 세팅한 경험도 VPC 구성할 때 도움이 되는걸
-                                보면 선택과 집중이 안 된 만큼 시너지가 튀어나오는 부분도 분명 있다고 생각합니다. 디버깅을 크롬 개발자 도구 부터 서버의 nginx log, 방화벽과 SQL
-                                서버 까지 할 수 있는 건 분명 쓸모가 있었습니다!</p>
-                        </dd>
-                    </dl>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <dl>
-                        <dt>경계짓기 문화에 대한 문제의식</dt>
-                        <dd>
-                            <p>채용 시장을 보면, "서버 엔지니어", "퍼블리셔", "프론트 엔드 개발자" 등 이름이 붙어 있는 Role 을 태그해 게시합니다. 여러 가지 감정이
-                                교차합니다. 분명 개발자라고는 할 수 있는 것 같은데, 5년차가 지나가는 지금 이 시점에도 저에게 어떤 꼬리표를 붙여야 할지 아직도 모호합니다. 저는 함께
-                                일하면 더 잘하고, 경계가 없으면 더 실력이 나오는 개발자입니다. 알고리즘 코딩 테스트 보다는 실무 중심의 대화가 저를 더 잘 표현할 수 있다 생각하고,
-                                코드로는 표현할 수 없는 여러가지 경험과 서비스에 대한 생각들이 저의 개발자 타이틀을 가능케 한다 생각합니다.</p>
-                        </dd>
-                    </dl>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <dl>
-                        <dt>좀 더 잘하고 싶은 것</dt>
-                        <dd>
-                            <ul>
-                                <li>
-                                    <strong>빠른 프로토타이핑을 위한 기술 습득</strong><br/>
-                                    시장과 사용자의 취향은 빠르게 변해가고 있기 때문에 LEAN 하게 접근할 수 밖에 없다 생각합니다. 좀 더 빠르게 서비스 MVP를 만들어낼 수 있는 부트스트래핑에 익숙해지고 싶고, 사용자가 만족하는 서비스를 만들고 싶습니다.
-                                </li>
-                                <li>
-                                    <strong>공감대를 이끌어낼 수 있는 화술과 이해력</strong><br/>
-                                    같이 일하는 사람과도, 고객과의 CRM에도 공감대 부터 시작해야 원하는 바를 이해하고 문제를 더 잘 해결할 수 있다 생각합니다. 상대방의 입장이 되어보고 원하는 바를 더 잘 이해하고 싶습니다.
-                                </li>
-                                <li>
-                                    <strong>업무에 몰입할 수 있는 집중력과 서비스 이해도 높이기</strong><br/>
-                                    더 잘 일하고 업무에 몰입하기 위해서는 조직에 align 되고 만들고 있는 서비스, 그리고 조직이 나아가는 방향에 대해 더 잘 아는 것이라 생각합니다.
-                                </li>
+                                <li>개발팀 신규 조직과 채용 / 운영(5인 1사일로 조직)</li>
+                                <li>webRTC 기술을 활용한 원격 학습관리 프로젝트 기획 및 개발</li>
+                                <li>Wordpress 등 CMS를 활용한 사이트와 커뮤니티 개발, PHP 를 사용한 온라인 시험 플랫폼 개발 및 운영</li>
+                                <li>H.264 + Video.js + Nginx 활용한 HLS/RTSP 스트리밍 환경 구축</li>
+                                <li>AWS S3, Lambda, Serverless 활용한 공무원 기출문제 다운로드 + PDF 병합 시스템 시스템 개발</li>
+                                <li>키오스크 화면 개발과 VAN OCX 연동, 서비스 VAN/PG 연동 <a href="https://www.behance.net/gallery/95675817/nangong-kiosk-ui-design" target="_blank">Behance - Nangong Kiosk</a></li>
+                                <li>Nuxt.js(Vue.js)를 사용해 자체 학원 운영 LMS 개발</li>
+                                <li>Raspberry pi 와 QR 바코드 리더를 활용한 출석체크 클라이언트 개발</li>
+                                <li>leaflet.js 활용한 좌석관리시스템 개발</li>
+                                <li>Cordova Framework 사용한 크로스 플랫폼 애플리케이션 개발, 출시  <a href="https://www.behance.net/gallery/95515307/my-nangong-App" target="_blank">Behance - My Nangong App'</a></li>
+                                <li>위메스 M&A 기술 관련 인계 담당</li>
                             </ul>
                         </dd>
                     </dl>
@@ -163,17 +92,71 @@
             <tr>
                 <td colspan="2">
                     <dl>
-                        <dt>글 맺음</dt>
-                        <dd>
-                            <p>내가 쓴 글을 남이 읽으면 조금 쑥쓰러울 수 있지만 시간 내어 읽어준 상대방에게 감사 해야 하는 거라 배웠습니다. 여기까지 읽어 주셔서 감사합니다.</p>
-                            <p>저는 토막 글로 소통하는 것도 좋아하지만, 말로 감정을 전달하고 듣는 것도 좋아합니다. 알고리즘과 코드 컨벤션 테스트도 개발 실력을 파악하는데는 중요하지만,
-                                개발 방법이 애자일하게 표준화 되고 라이브러리가 넘쳐 나는 만큼 테스트로는 표현하지 못하는 경험과 느낌을 풀어내는 대화의 힘을 조금 더 믿습니다.</p>
-                            <p>요즘은 회사랑도 썸 타야 한는데, 이시국이니 만큼 커피 한잔 들고 캠 앞에서 가벼운 마음으로 아이스 브레이킹 하는 것도 환영입니다. 제 연락처는 아래에
-                                있습니다. 전화 보다는 이메일로 먼저 연락주시면 감사드리겠습니다.</p>
+                        <dt>SKUINC(서경대학교 학교기업) <a href="http://skuinc.net" target="_blank">http://skuinc.net</a></dt>
+                        <dd class="about">서경대학교 산하 학교기업으로, 학내 디지털, 비-디지털 콘텐츠 생산 및 운영을 담당하는 학내 에이전시.</dd>
+                        <dd class="role">Web Developer - Web Development Team</dd>
+                        <dd class="duration">2016년 8월 - 2017년 11월 | Seoul, South Korea</dd>
+                        <dd class="works">
+                            <p>웹팀 소속 개발자로 웹 사이트 개발 및 유지보수를 담당.</p>
                             <ul>
-                                <li><a href="mailto:contact@jangwonseok.me">contact@jangwonseok.me</a></li>
+                                <li>XpressEngine, Wordpress 를 사용한 사이트 개발, 유지보수</li>
+                                <li>Wordpress 플러그인 개발, 기존 플러그인 마이그레이션과 성능 개선</li>
+                                <li>Slack - Gitlab - Jenkis - Docker 를 사용한 개발환경 통합 기획</li>
                             </ul>
                         </dd>
+                    </dl>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="education">
+            <thead>
+            <tr>
+                <th>Education</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="2">
+                    <dl>
+                        <dt>철학, 문학사 / 경희대학교</dt>
+                        <dd>2008년 3월 - 2016년 6월</dd>
+                        <dd>2010년 4월 - 2012년 4월 공군 전투비행단 복무</dd>
+                    </dl>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="award">
+            <thead>
+            <tr>
+                <th>Award and Qualification</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="2">
+                    <dl>
+                        <dt>Google Analytics Individual Qualification</dt>
+                        <dd>Google Skillshop</dd>
+                    </dl>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <dl>
+                        <dt>2017 i-AWARDS KOREA 교육부문>전문교육 대상 <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=7103" target="_blank">http://www.i-award.or.kr</a></dt>
+                        <dd>SeoKyeong University Arts Institute Website</dd>
+                    </dl>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <dl>
+                        <dt>2017 K-Design Award Winner <a href="https://kdesignaward.com/exhibition/101345" target="_blank">https://kdesignaward.com</a> </dt>
+                        <dd>SeoKyeong University Arts Institute Website</dd>
                     </dl>
                 </td>
             </tr>
@@ -184,16 +167,177 @@
 
 <script>
 export default {
-    name: "about"
+    name: "resume"
 }
 </script>
 
 <style scoped lang="scss">
 @import 'assets/partialAsset';
-#content-wrap{
-    ul{
-        li{
-            margin-bottom:8px !important;
+
+article{
+    display:flex;
+    width:100%;
+    height:auto;
+    flex-direction: column;
+    text-align: left;
+    line-height:1.5;
+
+    header{
+        margin-bottom:64px;
+
+        h1{
+            margin-bottom:8px;
+        }
+
+        dl{
+            margin:0;
+            padding:0;
+
+            dt{
+                font-size:18px;
+                font-style: italic;
+            }
+
+            .links{
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin:8px 0;
+
+                @media(max-width:$width-normal){
+                    flex-direction: column;
+                    line-height: 2;
+                }
+
+                dd{
+                    margin:0;
+                    padding:0;
+                }
+            }
+        }
+    }
+
+    table{
+        border-collapse: collapse;
+        width:100%;
+        margin-bottom:64px;
+
+
+        @media(max-width:$width-normal){
+            &.skills {
+                tbody {
+                    tr {
+                        display: block;
+                        margin-bottom: 16px;
+
+                        th, td {
+                            display: block;
+                            width: 100%;
+                            padding: 0;
+                        }
+
+                        th {
+                            margin-bottom: 2px;
+                        }
+                    }
+                }
+            }
+        }
+
+        thead{
+            tr{
+                th{
+                    font-size:24px;
+                    font-weight:bold;
+                    letter-spacing: 0.5px;
+                    padding:16px 0;
+                }
+            }
+        }
+
+        tbody{
+            tr{
+                th, td{
+                    font-size:13px;
+                    word-break: keep-all;
+                    padding:8px 0;
+                    vertical-align: top;
+                }
+
+                th{
+                    width:260px;
+                    font-weight:600;
+                }
+
+                td{
+                    dl{
+                        margin:0;
+                        padding:0;
+
+                        a{
+                            font-size:12px;
+                            font-style: italic;
+                            font-weight:normal;
+                            color:$color-green-500;
+                            background-color: $color-green-200;
+
+                            &:hover{
+                                background-color: $color-green-300;
+                                color:$color-green-600;
+                            }
+
+                            @media (max-width : $width-normal) {
+                                display:inline-block;
+                                width:auto;
+                            }
+                        }
+
+                        dt{
+                            font-size:18px;
+                            font-weight:600;
+                            margin-bottom:8px;
+                            padding:0;
+                        }
+
+                        dd{
+                            margin:0 0 4px;
+                            padding:0;
+
+                            strong{
+                                font-weight:600;
+                                color:$color-green-400;
+                                font-size:12px;
+                            }
+
+                            ul{
+                                li{
+                                    margin-bottom:4px;
+                                }
+                            }
+
+                            &.role, &.duration{
+                                font-weight:600;
+                                color:$color-dark-300;
+                            }
+
+                            &.role{
+                                margin-bottom:0;
+                                margin-top:8px;
+                            }
+
+                            &.duration{
+                                margin-bottom:16px;
+                            }
+
+                            &.works{
+                                p{
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
