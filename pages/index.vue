@@ -4,7 +4,7 @@
             <img src="@/assets/jangwonseok.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
         </figure>
         <div class="notice">
-            <p>넓지만 아직은 얕게 배워가고 있습니다.</p>
+            <p>넓지만 아직은 얕게, 꾸준히 채워나가기 위해 배우고 있습니다.</p>
             <p>2016년 부터 서울에서 웹 프로그래밍을 하고 있습니다.</p>
         </div>
         <dl class="quick">
@@ -20,14 +20,14 @@
         <dl class="post-list">
             <dt>작성한 글타래</dt>
             <dd>
-                <ul v-if="this.$store.state.posts.loading">
+                <ul v-if="this.loading">
                     <li v-for="n in 10">
                         <PuSkeleton :count="2" height="20px"/>
                     </li>
                 </ul>
                 <ul v-else>
-                    <li v-for="(list, index) in this.$store.state.posts.postList" :key="index">
-                        <nuxt-link :to="Object.keys($store.state.posts.categories).find(key => {return $store.state.posts.categories[key] === list.categories[0]}) + '/' + list.id" v-html="list.title.rendered"></nuxt-link>
+                    <li v-for="(list, index) in this.postList" :key="index">
+                        <nuxt-link :to="Object.keys(categories).find(key => {return categories[key] === list['categories'][0]}) + '/' + list.id" v-html="list.title.rendered"></nuxt-link>
                     </li>
                 </ul>
             </dd>
@@ -39,11 +39,36 @@
 export default {
     name: "index",
     layout: 'default',
-    mounted() {
-        this.$store.dispatch('posts/getPost', {
-            category : null,
-            postId: null
-        });
+    fetchOnServer : true,
+    data(){
+        return {
+            postList : [],
+            categories : {},
+            loading : false
+        }
+    },
+
+    methods : {
+        async getCategories(){
+            await this.$axios.get('/categories').then(result =>{
+                let categoryArrange = {};
+                result.data.forEach(item => {
+                    categoryArrange[item.slug] = item.id;
+                })
+                this.categories = categoryArrange;
+            });
+        },
+        async getListAll(){
+            this.loading = true;
+            await this.getCategories();
+            await this.$axios.get('/posts?per_page=100').then(result => {
+                this.postList = result.data;
+                this.loading = false;
+            })
+        },
+    },
+    async fetch() {
+        await this.getListAll();
     }
 }
 </script>
