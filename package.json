@@ -9,8 +9,10 @@
         "generate": "nuxt generate"
     },
     "dependencies": {
+        "@nuxtjs/axios": "^5.12.4",
         "axios": "^0.21.1",
         "core-js": "^3.6.5",
+        "html-entities": "^1.4.0",
         "normalize.css": "^8.0.1",
         "nuxt": "^2.14.12",
         "svg-inline-loader": "^0.8.2",

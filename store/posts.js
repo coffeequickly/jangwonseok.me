@@ -1,3 +1,5 @@
+import fetchAPI from '../plugins/fetch'
+
 export const state = () => ({
     postList : [],
     post : null,
@@ -19,20 +21,22 @@ export const mutations = {
     },
 
     SET_LOADING(state, payload){
-        if(payload === false){
-            setTimeout(()=>{
-                state.loading = payload;
-            }, 200);
-        }else{
-            state.loading = payload;
-        }
+        // if(payload === false){
+        //     state.loading = payload;
+        //     // setTimeout(()=>{
+        //     //     state.loading = payload;
+        //     // }, 200);
+        // }else{
+        //     state.loading = payload;
+        // }
+        state.loading = payload;
     }
 }
 
 export const actions = {
     async getCategories({commit}){
         commit('SET_LOADING', true);
-        await $nuxt.fetchAPI('GET', '/categories').then(result =>{
+        await fetchAPI('GET', '/categories').then(result =>{
             let categoryArrange = {};
             result.data.forEach(item => {
                 categoryArrange[item.slug] = item.id;
@@ -45,7 +49,6 @@ export const actions = {
 
     async getPost({state, commit, dispatch}, {category, postId}){
         commit('SET_LOADING', true);
-
         await dispatch('getCategories').then(() =>{
             commit('SET_POST', null);
             commit('SET_LIST', []);
@@ -64,7 +67,7 @@ export const actions = {
                 endpoint += '?per_page=100';
             }
 
-            $nuxt.fetchAPI('GET', endpoint).then(result => {
+            fetchAPI('GET', endpoint).then(result => {
                 if(postId){
                     commit('SET_POST', result.data);
                 }else{

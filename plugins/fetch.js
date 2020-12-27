@@ -1,12 +1,13 @@
 'use strict'
 import axios from 'axios';
-import Vue from 'vue'
+// import Vue from 'vue'
 
 const baseUrl = 'https://api.jangwonseok.me/wp-json/wp/v2',
     fetchProtocol = axios.create();
 
 
-Vue.prototype.fetchAPI = function(method, endpoint, data = null) {
+
+export default function(method, endpoint, data = null) {
     // axios 설정 기본값
     let axiosOptions = {
         method: method,
