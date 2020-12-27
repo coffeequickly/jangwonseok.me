@@ -3,6 +3,9 @@ module.exports = {
     // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
     ssr: true,
     target: 'server',
+    loading : {
+        color:'#6c733d'
+    },
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Wonseok Jang - Service Oriented Web Software Engineer',
@@ -52,7 +55,7 @@ module.exports = {
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: [
         {src : '~plugins/googleAnalytics.js', mode: 'client'},
-        {src : '~plugins/fetch.js', mode: 'client'},
+        // {src : '~plugins/fetch.js', mode: 'client'},
         {src : '~plugins/svg-inline.js', mode: 'client'},
         {src : '~plugins/routeIntercept.js', mode: 'client'},
         {src : '~plugins/skeleton.js', mode: 'client'},
@@ -65,7 +68,17 @@ module.exports = {
     buildModules: [],
 
     // Modules (https://go.nuxtjs.dev/config-modules)
-    // modules: ['nuxt-babel'],
+    modules: ['@nuxtjs/axios'],
+
+    publicRuntimeConfig: {
+        axios: {
+            baseURL : 'https://api.jangwonseok.me/wp-json/wp/v2',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            timeout: 10000
+        }
+    },
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
