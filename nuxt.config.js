@@ -1,8 +1,8 @@
 const nodeExternals = require('webpack-node-externals')
 module.exports = {
     // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-    ssr: false,
-    target: 'static',
+    ssr: true,
+    target: 'server',
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Wonseok Jang - Service Oriented Web Software Engineer',
@@ -65,7 +65,7 @@ module.exports = {
     buildModules: [],
 
     // Modules (https://go.nuxtjs.dev/config-modules)
-    modules: [],
+    // modules: ['nuxt-babel'],
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
@@ -91,14 +91,6 @@ module.exports = {
 
             // Important to apply transforms on svg-inline:src
             vueLoader.options.transformAssetUrls['svg-inline'] = 'src'
-
-            if (isServer) {
-                config.externals = [
-                    nodeExternals({
-                        allowlist: [/\.(?!(?:js|json|svg)$).{1,5}$/i, /^vue-awesome/]
-                    })
-                ]
-            }
         }
     }
 }

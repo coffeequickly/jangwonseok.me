@@ -1,4 +1,5 @@
 <template>
+    <no-ssr>
     <header>
         <div class="header-wrap">
             <button class="open-navigation" @click.prevent="toggleNav">
@@ -11,6 +12,7 @@
         <navigator class="nav"/>
         <navigator class="mobile-nav" v-if="$nuxt.$store.state.nav"/>
     </header>
+    </no-ssr>
 </template>
 
 <script>

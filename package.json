@@ -15,17 +15,17 @@
         "generate": "nuxt generate"
     },
     "dependencies": {
-        "axios": "^0.21.0",
+        "axios": "^0.21.1",
         "core-js": "^3.6.5",
         "normalize.css": "^8.0.1",
-        "nuxt": "^2.14.11",
+        "nuxt": "^2.14.12",
         "svg-inline-loader": "^0.8.2",
         "vue-loading-skeleton": "^1.1.9",
         "webpack-node-externals": "^2.5.2",
         "xmldom": "^0.3.0"
     },
     "devDependencies": {
-        "@nuxt/types": "^2.14.11",
+        "@nuxt/types": "^2.14.12",
         "node-sass": "^4.0.0",
         "sass-loader": "^8.0.2"
     }

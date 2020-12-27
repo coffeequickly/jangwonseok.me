@@ -22,7 +22,7 @@ export const mutations = {
         if(payload === false){
             setTimeout(()=>{
                 state.loading = payload;
-            }, 300);
+            }, 200);
         }else{
             state.loading = payload;
         }
