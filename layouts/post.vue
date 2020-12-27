@@ -16,6 +16,7 @@
 import HeaderDefault from "~/layouts/_header";
 import FooterDefault from "~/layouts/_footer";
 export default {
+    name : 'post',
     components: {FooterDefault, HeaderDefault},
     data(){
         return {
