@@ -27,7 +27,6 @@
     </article>
     <!--    </div>-->
 
-
     <ul v-else class="list">
         <li v-for="(list, index) in this.postList" :key="index">
             <nuxt-link :to="$route.params.category+'/'+list.id">
@@ -112,6 +111,7 @@ export default {
             })
         },
     },
+
     async fetch() {
         await this.getPost();
     },
@@ -170,6 +170,18 @@ article.post {
 
             a {
                 word-break: break-all;
+                color:$color-green-400;
+                text-decoration: underline;
+                transition: all 0.3s ease-in-out;
+
+                &:hover{
+                    color:$color-green-600;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            p{
+                margin:32px 0;
             }
 
             ul {
@@ -178,7 +190,8 @@ article.post {
                 }
 
                 li {
-                    margin-bottom: 16px;
+                    margin-bottom: 8px;
+                    //font-size:12px;
 
                     @media(max-width: $width-normal) {
                         &::marker {
@@ -209,7 +222,7 @@ article.post {
 
             figure {
                 width: 80%;
-                margin: 16px auto;
+                margin: 32px auto;
 
                 @media(max-width: $width-normal) {
                     width: 100%;
@@ -219,6 +232,16 @@ article.post {
                     display: block;
                     width: 100%;
                     height: auto;
+                }
+
+                figcaption{
+                    text-align: center;
+                    font-size:12px;
+                    color:$color-dark-300;
+
+                    a{
+                        color:$color-green-400;
+                    }
                 }
             }
         }

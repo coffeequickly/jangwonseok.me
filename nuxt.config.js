@@ -2,10 +2,12 @@ const nodeExternals = require('webpack-node-externals')
 module.exports = {
     // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
     ssr: true,
-    target: 'server',
-    loading : {
-        color:'#6c733d'
+    loading: {
+        color: '#6c733d',
+        throttle: 0,
+        height: '2px'
     },
+    target: 'server',
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Wonseok Jang - Service Oriented Web Software Engineer',
