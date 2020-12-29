@@ -1,38 +1,19 @@
 <template>
-    <article>
-        <figure>
-            <img src="@/assets/jangwonseok.jpg" title="Wonseok Jang" alt="Wonseok Jang"/>
-        </figure>
-        <div class="notice">
-            <p>넓지만 아직은 얕게, 꾸준히 채워나가기 위해 배우고 있습니다.</p>
-            <p>2016년 부터 서울에서 웹 프로그래밍을 하고 있습니다.</p>
-        </div>
-        <dl class="quick">
-            <dt>저에 대해 궁금하시다면</dt>
-            <dd>
-                <ul>
-                    <li><nuxt-link to="/about">소개 바로가기</nuxt-link></li>
-                    <li><a href="mailto:contact@jangwonseok.me">contact@jangwonseok.me</a></li>
-                    <li><a href="https://github.com/coffeequickly" target="_blank">github.com/coffeequickly</a></li>
-                </ul>
+    <section>
+        <dl>
+            <dt>All Scribbler</dt>
+            <dd class="post-list">
+                <article v-for="(list, index) in this.postList" :key="index">
+                    <nuxt-link :to="Object.keys(categories).find(key => {return categories[key] === list['categories'][0]}) + '/' + list.id">
+                        <figure v-if="list._embedded['wp:featuredmedia']">
+                            <img :src="list._embedded['wp:featuredmedia'][0].source_url">
+                        </figure>
+                        <h2 v-html="list.title.rendered"/>
+                    </nuxt-link>
+                </article>
             </dd>
         </dl>
-        <dl class="post-list">
-            <dt>작성한 글타래</dt>
-            <dd>
-                <ul v-if="this.loading">
-                    <li v-for="n in 10">
-                        <PuSkeleton :count="2" height="20px"/>
-                    </li>
-                </ul>
-                <ul v-else>
-                    <li v-for="(list, index) in this.postList" :key="index">
-                        <nuxt-link :to="Object.keys(categories).find(key => {return categories[key] === list['categories'][0]}) + '/' + list.id" v-html="list.title.rendered"></nuxt-link>
-                    </li>
-                </ul>
-            </dd>
-        </dl>
-    </article>
+    </section>
 </template>
 
 <script>
@@ -47,7 +28,6 @@ export default {
             loading : false
         }
     },
-
     methods : {
         async getCategories(){
             await this.$axios.get('/categories').then(result =>{
@@ -61,7 +41,7 @@ export default {
         async getListAll(){
             this.loading = true;
             await this.getCategories();
-            await this.$axios.get('/posts?per_page=100').then(result => {
+            await this.$axios.get('/posts?_embed&per_page=100').then(result => {
                 this.postList = result.data;
                 this.loading = false;
             })
@@ -75,6 +55,53 @@ export default {
 
 <style scoped lang="scss">
 @import 'assets/partialAsset';
+section{
+    dl{
+        margin:0;
+        width:100%;
+        padding:64px 32px;
+        box-sizing: border-box;
+
+        dt{
+            font-weight:900;
+            text-transform: uppercase;
+            font-size:48px;
+            letter-spacing: -1px;
+            box-sizing: border-box;
+            margin-bottom:32px;
+        }
+
+        dd.post-list{
+            margin:0;
+            padding:0;
+            width:100%;
+
+            article{
+                display:block;
+                width:100%;
+
+                a{
+                    display:block;
+                    width:100%;
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 //article{
 //    width:100%;
 //    //min-height:calc(100vh - (64px + 48px));

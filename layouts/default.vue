@@ -1,10 +1,10 @@
 <template>
     <div class="page-layout">
-<!--        <header-default/>-->
-<!--        <main id="content-wrap">-->
+        <header-default/>
+        <main id="content-wrap">
             <Nuxt/>
-<!--        </main>-->
-<!--        <footer-default/>-->
+        </main>
+        <footer-default/>
     </div>
 </template>
 

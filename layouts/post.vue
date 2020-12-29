@@ -5,10 +5,6 @@
             <Nuxt/>
         </main>
         <footer-default/>
-        <div class="functions">
-            <a :href="this.writeUrl" class="write-post">Write Post</a>
-            <a :href="'https://api.jangwonseok.me/wp-admin/post.php?post='+ this.$store.state.posts.post.id +'&action=edit'" class="edit-post" v-if="this.$store.state.posts.post">Edit Post</a>
-        </div>
     </div>
 </template>
 

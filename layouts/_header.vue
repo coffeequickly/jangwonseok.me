@@ -1,16 +1,13 @@
 <template>
     <client-only>
     <header>
-<!--        <div class="header-wrap">-->
-<!--            <button class="open-navigation" @click.prevent="toggleNav">-->
-<!--                <svg-inline src="~assets/menu.svg"/>-->
-<!--            </button>-->
-<!--            <nuxt-link to="/" class="home">-->
-<!--                <svg-inline src="~assets/jangwonseok.svg"/>-->
-<!--            </nuxt-link>-->
-<!--        </div>-->
-<!--        <navigator class="nav"/>-->
-<!--        <navigator class="mobile-nav" v-if="$nuxt.$store.state.nav"/>-->
+        <div class="header-wrap">
+            <nuxt-link to="/" tag="button" class="button-clear brand">
+                <svg-inline src="~assets/jangwonseok.svg"/>
+                <span>archive!</span>
+            </nuxt-link>
+            <navigator/>
+        </div>
     </header>
     </client-only>
 </template>
@@ -31,6 +28,78 @@ export default {
 
 <style scoped lang="scss">
 @import 'assets/partialAsset';
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:72px;
+    display:flex;
+    background-color: $color-light-100;
+    box-sizing: border-box;
+    border-bottom:1px solid $color-light-300;
+
+    .header-wrap{
+        display:flex;
+        width:1540px;
+        margin:auto;
+
+        .brand{
+            position:relative;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            height:48px;
+            box-sizing: border-box;
+
+            &:hover{
+                ::v-deep svg{
+                    path[fill='#F6DBD7']{
+                        opacity: 0.6 !important;
+                        transition: opacity 0.5s ease-out;
+                    }
+                }
+            }
+
+            ::v-deep svg{
+                width:auto;
+                height:100%;
+
+                path[fill='#F6DBD7']{
+                    opacity: 0 !important;
+                    transition: opacity 0.5s ease-out;
+                }
+            }
+
+            span{
+                font-weight:900;
+                font-size:24px;
+                font-style: italic;
+                margin-left:16px;
+            }
+        }
+
+        .navigation{
+            display:flex;
+            flex-direction: row;
+            margin-left:auto;
+            align-items: center;
+
+            ::v-deep a{
+                display: inline-block;
+                margin-right:32px;
+                font-size:16px;
+                font-weight:300;
+                color:$color-dark-500;
+                font-style: italic;
+
+                &:last-child{
+                    margin-right:0;
+                }
+            }
+        }
+    }
+}
 
 //header {
 //    display: block;

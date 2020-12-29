@@ -3,7 +3,7 @@ module.exports = {
     // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
     ssr: true,
     loading: {
-        color: '#6c733d',
+        color: '#333333',
         throttle: 0,
         height: '2px'
     },
@@ -41,7 +41,7 @@ module.exports = {
             {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/meta/favicon/favicon-16x16.png'},
             {rel: 'icon', type: 'image/png', sizes: '192x192', href: '/meta/favicon/android-icon-192x192.png'},
             {rel: 'icon', type: 'image/png', sizes: '192x192', href: '/meta/favicon/android-icon-192x192.png'},
-            {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Noto+Serif+KR:wght@400;600;900&display=swap'}
+            {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Noto+Serif+KR:wght@300;500&display=swap'}
         ]
     },
 

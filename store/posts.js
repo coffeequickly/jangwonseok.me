@@ -53,16 +53,14 @@ export const actions = {
             commit('SET_POST', null);
             commit('SET_LIST', []);
 
-            let endpoint = '/posts/';
+            let endpoint = '/posts?_embed';
 
             if(category){
-                endpoint += '?categories=' + state.categories[category];
+                endpoint += '&categories=' + state.categories[category];
             }
 
             if(postId){
                 endpoint += postId;
-            }else if(category){
-                endpoint += '&per_page=100';
             }else{
                 endpoint += '?per_page=100';
             }
