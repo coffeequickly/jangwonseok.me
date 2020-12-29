@@ -38,6 +38,7 @@ header{
     background-color: $color-light-100;
     box-sizing: border-box;
     border-bottom:1px solid $color-light-300;
+    z-index:9;
 
     .header-wrap{
         display:flex;

@@ -1,24 +1,22 @@
 <template>
     <footer>
-<!--        <dl>-->
-<!--            <dt>Wonseok Jang</dt>-->
-<!--            <dd>-->
-<!--                <span>E-mail</span>-->
-<!--                <a href="mailto:contact@jangwonseok.me">contact@jangwonseok.me</a>-->
-<!--            </dd>-->
-<!--&lt;!&ndash;            <dd>&ndash;&gt;-->
-<!--&lt;!&ndash;                <span>Profile</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                <nuxt-link to="/">jangwonseok.me</nuxt-link>&ndash;&gt;-->
-<!--&lt;!&ndash;            </dd>&ndash;&gt;-->
-<!--&lt;!&ndash;            <dd>&ndash;&gt;-->
-<!--&lt;!&ndash;                <span>Github</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                <a href="https://github.com/coffeequickly" target="_blank">github.com/coffeequickly</a>&ndash;&gt;-->
-<!--&lt;!&ndash;            </dd>&ndash;&gt;-->
-<!--        </dl>-->
+        <div class="footer-wrap">
+            <dl>
+                <dt>장 원석</dt>
+                <dd>사람들이 좋아하는 서비스를 만드는 걸 좋아합니다.</dd>
+                <dd>새로운 기술 요소를 탐닉합니다. 욕심이 많아서 넓고 얉게 훑습니다.</dd>
+                <dd>글도 잘 쓰고 말도 잘 하고 싶습니다. 수다쟁이입니다.</dd>
+            </dl>
 
-<!--        <button class="scroll-to-top" @click.prevent="scrollToTop">-->
-<!--            <svg-inline src="~assets/scrollToTop.svg" />-->
-<!--        </button>-->
+            <dl>
+                <dt>Thanks to</dt>
+                <dd>Amazon Web Service</dd>
+                <dd>Wordpress - Backend restfulAPI</dd>
+                <dd>Nuxt.js - Easy front-end bootstrap with SSR</dd>
+            </dl>
+
+            <p>© Wonseok Jang</p>
+        </div>
     </footer>
 </template>
 
@@ -34,7 +32,34 @@ export default {
 </script>
 
 <style scoped lang="scss">
-//@import 'assets/partialAsset';
+@import 'assets/partialAsset';
+footer{
+    background-color: $color-dark-500;
+
+    .footer-wrap{
+        width:$width-large;
+        //text-align: center;
+        margin:32px auto;
+        padding:32px;
+        box-sizing: border-box;
+
+        dl{
+            margin:0;
+            width:100%;
+            font-size:12px;
+
+            dt{
+                margin:0;
+                color:$color-light-300;
+            }
+
+            dd{
+                color:$color-light-300;
+            }
+        }
+    }
+}
+
 //footer{
 //    width:100%;
 //    padding:4px 16px;

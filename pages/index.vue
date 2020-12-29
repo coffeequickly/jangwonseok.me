@@ -5,10 +5,18 @@
             <dd class="post-list">
                 <article v-for="(list, index) in this.postList" :key="index">
                     <nuxt-link :to="Object.keys(categories).find(key => {return categories[key] === list['categories'][0]}) + '/' + list.id">
-                        <figure v-if="list._embedded['wp:featuredmedia']">
-                            <img :src="list._embedded['wp:featuredmedia'][0].source_url">
+                        <figure v-if="list._embedded['wp:featuredmedia']"  :style="{backgroundImage : 'url('+ list._embedded['wp:featuredmedia'][0].source_url +')'}"/>
+                        <figure v-else class="no-featured-image">
+                            <svg-inline src="~assets/jangwonseok.svg"/>
                         </figure>
+
                         <h2 v-html="list.title.rendered"/>
+
+                        <p v-html="list.excerpt.rendered"></p>
+
+                        <ul>
+                            <li></li>
+                        </ul>
                     </nuxt-link>
                 </article>
             </dd>
@@ -72,18 +80,69 @@ section{
         }
 
         dd.post-list{
-            margin:0;
+            display:flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            //justify-content: space-between;
+            margin:-16px 0;
             padding:0;
             width:100%;
 
             article{
                 display:block;
-                width:100%;
+                width:24.25%;
+                margin:16px 1% 0 0;
+
+                &:nth-child(4n){
+                    margin-right:0;
+                }
 
                 a{
                     display:block;
                     width:100%;
 
+                    figure{
+                        background-color: $color-light-200;
+                        width: 100%;
+                        padding-top: 60%;
+                        margin:0;
+                        background-size: cover;
+                        background-position: center center;
+                        position:relative;
+
+                        &:before{
+                            content:'';
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            display:block;
+                            width:100%;
+                            height:100%;
+                            z-index:1;
+                            background-color: $color-dark-500;
+                            opacity: 0.05;
+                        }
+
+                        &.no-featured-image{
+                            background-color: $color-blue;
+
+                            ::v-deep svg{
+                                position:absolute;
+                                top:50%;
+                                left:50%;
+                                transform: translate(-50%, -50%);
+                                width:128px;
+                                height:128px;
+                            }
+                        }
+                    }
+
+                    h2{
+                        font-size:18px;
+                        word-break: keep-all;
+                        font-weight:700;
+
+                    }
                 }
             }
         }

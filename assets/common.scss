@@ -15,16 +15,6 @@ html body {
     a{
         text-decoration: none;
         color:inherit;
-
-        &:hover{
-            strong, span, h1, h2, h3{
-                background-position: 0 110%,110% 93%,0 93%;
-                background-repeat: no-repeat,no-repeat,repeat-x;
-                background-size: 2px 2px,2px 2px,2px 2px;
-                text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 2px 0 #fff, -2px 0 #fff, 2px 0 #fff, -2px 0 #fff, 2px 0 #fff, -2px 0 #fff, 2px 0 #fff, -2px 0 #fff;
-                background-image: linear-gradient(#fff,#fff),linear-gradient(#fff,#fff),linear-gradient(#484848,#484848);
-            }
-        }
     }
 
     h2, h3{
