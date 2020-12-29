@@ -1,32 +1,43 @@
 <template>
     <section>
+        <client-only>
         <dl>
             <dt>All Scribbler</dt>
             <dd class="post-list">
                 <article v-for="(list, index) in this.postList" :key="index">
                     <nuxt-link :to="Object.keys(categories).find(key => {return categories[key] === list['categories'][0]}) + '/' + list.id">
-                        <figure v-if="list._embedded['wp:featuredmedia']"  :style="{backgroundImage : 'url('+ list._embedded['wp:featuredmedia'][0].source_url +')'}"/>
-                        <figure v-else class="no-featured-image">
-                            <svg-inline src="~assets/jangwonseok.svg"/>
+                        <figure v-if="list.better_featured_image !== null">
+                            <div class="thumbnail" v-if="list.better_featured_image.media_details.sizes.medium" :style="{backgroundImage : 'url('+ list.better_featured_image.media_details.sizes.medium.source_url +')'}"/>
+                            <div class="thumbnail" v-else :style="{backgroundImage : 'url('+ list.better_featured_image.media_details.sizes.thumbnail.source_url +')'}"/>
+                            <article-label/>
                         </figure>
 
-                        <h2 v-html="list.title.rendered"/>
+                        <figure v-else class="no-featured-image">
+                            <svg-inline src="~assets/jangwonseok.svg"/>
+                            <article-label/>
+                        </figure>
 
-                        <p v-html="list.excerpt.rendered"></p>
+                        <div class="content">
+                            <h2 v-html="list.title.rendered"/>
+                            <div class="excerpt" v-html="list.excerpt.rendered"/>
 
-                        <ul>
-                            <li></li>
-                        </ul>
+                            <ul>
+                                <li>front-end</li>
+                            </ul>
+                        </div>
                     </nuxt-link>
                 </article>
             </dd>
         </dl>
+        </client-only>
     </section>
 </template>
 
 <script>
+import ArticleLabel from "@/components/articleLabel";
 export default {
     name: "index",
+    components: {ArticleLabel},
     layout: 'default',
     fetchOnServer : true,
     data(){
@@ -91,7 +102,7 @@ section{
             article{
                 display:block;
                 width:24.25%;
-                margin:16px 1% 0 0;
+                margin:32px 1% 0 0;
 
                 &:nth-child(4n){
                     margin-right:0;
@@ -102,13 +113,22 @@ section{
                     width:100%;
 
                     figure{
+                        position:relative;
                         background-color: $color-light-200;
                         width: 100%;
                         padding-top: 60%;
                         margin:0;
-                        background-size: cover;
-                        background-position: center center;
-                        position:relative;
+
+                        .thumbnail{
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            z-index:1;
+                            width:100%;
+                            height:100%;
+                            background-size: cover;
+                            background-position: center center;
+                        }
 
                         &:before{
                             content:'';
@@ -118,13 +138,13 @@ section{
                             display:block;
                             width:100%;
                             height:100%;
-                            z-index:1;
+                            z-index:2;
                             background-color: $color-dark-500;
                             opacity: 0.05;
                         }
 
                         &.no-featured-image{
-                            background-color: $color-blue;
+                            background-color: $color-blue-500;
 
                             ::v-deep svg{
                                 position:absolute;
@@ -137,11 +157,68 @@ section{
                         }
                     }
 
-                    h2{
-                        font-size:18px;
-                        word-break: keep-all;
-                        font-weight:700;
+                    .content{
+                        position:relative;
+                        min-height:136px;
 
+                        h2{
+                            font-size:18px;
+                            word-break: keep-all;
+                            font-weight:700;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            margin:16px 0 8px;
+                        }
+
+                        .excerpt{
+                            ::v-deep p{
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                margin:0;
+                                color:$color-dark-300;
+                                font-size:12px;
+                                font-weight:300;
+                            }
+                        }
+
+                        ul{
+                            margin:0;
+                            padding:0;
+                            position:absolute;
+                            bottom:0;
+                            left:0;
+                            width:100%;
+                            list-style: none;
+
+                            li{
+                                display:inline-block;
+                                width:auto;
+                                margin-right:8px;
+                                color:$color-dark-200;
+                                font-size:11px;
+                                box-sizing: border-box;
+                                border:1px solid $color-light-300;
+                                padding:2px 8px;
+                                text-transform: capitalize;
+                                background-color: $color-light-200;
+
+                                //&:after{
+                                //    content:', ';
+                                //}
+
+                                &:last-child{
+                                    margin-right:0;
+
+                                    //&:after{
+                                    //    content:'';
+                                    //}
+                                }
+                            }
+                        }
                     }
                 }
             }
