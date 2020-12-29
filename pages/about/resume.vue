@@ -169,173 +169,173 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'assets/partialAsset';
-
-article{
-    display:flex;
-    width:100%;
-    height:auto;
-    flex-direction: column;
-    text-align: left;
-    line-height:1.5;
-
-    header{
-        margin-bottom:64px;
-
-        h1{
-            margin-bottom:8px;
-        }
-
-        dl{
-            margin:0;
-            padding:0;
-
-            dt{
-                font-size:18px;
-                font-style: italic;
-            }
-
-            .links{
-                display:flex;
-                flex-direction: row;
-                justify-content: space-between;
-                margin:8px 0;
-
-                @media(max-width:$width-normal){
-                    flex-direction: column;
-                    line-height: 2;
-                }
-
-                dd{
-                    margin:0;
-                    padding:0;
-                }
-            }
-        }
-    }
-
-    table{
-        border-collapse: collapse;
-        width:100%;
-        margin-bottom:64px;
-
-
-        @media(max-width:$width-normal){
-            &.skills {
-                tbody {
-                    tr {
-                        display: block;
-                        margin-bottom: 16px;
-
-                        th, td {
-                            display: block;
-                            width: 100%;
-                            padding: 0;
-                        }
-
-                        th {
-                            margin-bottom: 2px;
-                        }
-                    }
-                }
-            }
-        }
-
-        thead{
-            tr{
-                th{
-                    font-size:24px;
-                    font-weight:bold;
-                    letter-spacing: 0.5px;
-                    padding:16px 0;
-                }
-            }
-        }
-
-        tbody{
-            tr{
-                th, td{
-                    font-size:13px;
-                    word-break: keep-all;
-                    padding:8px 0;
-                    vertical-align: top;
-                }
-
-                th{
-                    width:260px;
-                    font-weight:600;
-                }
-
-                td{
-                    dl{
-                        margin:0;
-                        padding:0;
-
-                        a{
-                            font-size:12px;
-                            font-style: italic;
-                            font-weight:normal;
-                            color:$color-green-500;
-                            background-color: $color-green-200;
-
-                            &:hover{
-                                background-color: $color-green-300;
-                                color:$color-green-600;
-                            }
-
-                            @media (max-width : $width-normal) {
-                                display:inline-block;
-                                width:auto;
-                            }
-                        }
-
-                        dt{
-                            font-size:18px;
-                            font-weight:600;
-                            margin-bottom:8px;
-                            padding:0;
-                        }
-
-                        dd{
-                            margin:0 0 4px;
-                            padding:0;
-
-                            strong{
-                                font-weight:600;
-                                color:$color-green-400;
-                                font-size:12px;
-                            }
-
-                            ul{
-                                li{
-                                    margin-bottom:4px;
-                                }
-                            }
-
-                            &.role, &.duration{
-                                font-weight:600;
-                                color:$color-dark-300;
-                            }
-
-                            &.role{
-                                margin-bottom:0;
-                                margin-top:8px;
-                            }
-
-                            &.duration{
-                                margin-bottom:16px;
-                            }
-
-                            &.works{
-                                p{
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+//@import 'assets/partialAsset';
+//
+//article{
+//    display:flex;
+//    width:100%;
+//    height:auto;
+//    flex-direction: column;
+//    text-align: left;
+//    line-height:1.5;
+//
+//    header{
+//        margin-bottom:64px;
+//
+//        h1{
+//            margin-bottom:8px;
+//        }
+//
+//        dl{
+//            margin:0;
+//            padding:0;
+//
+//            dt{
+//                font-size:18px;
+//                font-style: italic;
+//            }
+//
+//            .links{
+//                display:flex;
+//                flex-direction: row;
+//                justify-content: space-between;
+//                margin:8px 0;
+//
+//                @media(max-width:$width-normal){
+//                    flex-direction: column;
+//                    line-height: 2;
+//                }
+//
+//                dd{
+//                    margin:0;
+//                    padding:0;
+//                }
+//            }
+//        }
+//    }
+//
+//    table{
+//        border-collapse: collapse;
+//        width:100%;
+//        margin-bottom:64px;
+//
+//
+//        @media(max-width:$width-normal){
+//            &.skills {
+//                tbody {
+//                    tr {
+//                        display: block;
+//                        margin-bottom: 16px;
+//
+//                        th, td {
+//                            display: block;
+//                            width: 100%;
+//                            padding: 0;
+//                        }
+//
+//                        th {
+//                            margin-bottom: 2px;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//        thead{
+//            tr{
+//                th{
+//                    font-size:24px;
+//                    font-weight:bold;
+//                    letter-spacing: 0.5px;
+//                    padding:16px 0;
+//                }
+//            }
+//        }
+//
+//        tbody{
+//            tr{
+//                th, td{
+//                    font-size:13px;
+//                    word-break: keep-all;
+//                    padding:8px 0;
+//                    vertical-align: top;
+//                }
+//
+//                th{
+//                    width:260px;
+//                    font-weight:600;
+//                }
+//
+//                td{
+//                    dl{
+//                        margin:0;
+//                        padding:0;
+//
+//                        a{
+//                            font-size:12px;
+//                            font-style: italic;
+//                            font-weight:normal;
+//                            color:$color-green-500;
+//                            background-color: $color-green-200;
+//
+//                            &:hover{
+//                                background-color: $color-green-300;
+//                                color:$color-green-600;
+//                            }
+//
+//                            @media (max-width : $width-normal) {
+//                                display:inline-block;
+//                                width:auto;
+//                            }
+//                        }
+//
+//                        dt{
+//                            font-size:18px;
+//                            font-weight:600;
+//                            margin-bottom:8px;
+//                            padding:0;
+//                        }
+//
+//                        dd{
+//                            margin:0 0 4px;
+//                            padding:0;
+//
+//                            strong{
+//                                font-weight:600;
+//                                color:$color-green-400;
+//                                font-size:12px;
+//                            }
+//
+//                            ul{
+//                                li{
+//                                    margin-bottom:4px;
+//                                }
+//                            }
+//
+//                            &.role, &.duration{
+//                                font-weight:600;
+//                                color:$color-dark-300;
+//                            }
+//
+//                            &.role{
+//                                margin-bottom:0;
+//                                margin-top:8px;
+//                            }
+//
+//                            &.duration{
+//                                margin-bottom:16px;
+//                            }
+//
+//                            &.works{
+//                                p{
+//
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 </style>

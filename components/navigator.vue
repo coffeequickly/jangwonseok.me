@@ -26,24 +26,24 @@ export default {
 
 <style scoped lang="scss">
 @import 'assets/partialAsset';
-
-a {
-    margin-left: 8px;
-    color: $color-green-600;
-    display: inline-block;
-    padding: 2px 12px;
-    box-sizing: border-box;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-
-    &:before {
-        content: '# '
-    }
-
-    &:hover, &.is-active {
-        background-color: $color-green-600;
-        color: $color-light-100;
-        transition: all 0.3s ease-in-out;
-    }
-}
+//
+//a {
+//    margin-left: 8px;
+//    color: $color-green-600;
+//    display: inline-block;
+//    padding: 2px 12px;
+//    box-sizing: border-box;
+//    text-decoration: none;
+//    transition: all 0.3s ease-in-out;
+//
+//    &:before {
+//        content: '# '
+//    }
+//
+//    &:hover, &.is-active {
+//        background-color: $color-green-600;
+//        color: $color-light-100;
+//        transition: all 0.3s ease-in-out;
+//    }
+//}
 </style>

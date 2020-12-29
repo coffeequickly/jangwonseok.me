@@ -36,7 +36,7 @@ export const mutations = {
 export const actions = {
     async getCategories({commit}){
         commit('SET_LOADING', true);
-        await fetchAPI('GET', '/categories').then(result =>{
+        await this.$axios.get('/categories').then(result =>{
             let categoryArrange = {};
             result.data.forEach(item => {
                 categoryArrange[item.slug] = item.id;

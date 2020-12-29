@@ -12,3 +12,9 @@ export const mutations = {
     }
 }
 
+// 서버측 렌더링 로직은 여기에
+export const actions = {
+    async nuxtServerInit({ state, dispatch }, {app}) {
+        await dispatch('posts/getCategories');
+    }
+}

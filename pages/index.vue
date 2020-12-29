@@ -75,49 +75,49 @@ export default {
 
 <style scoped lang="scss">
 @import 'assets/partialAsset';
-article{
-    width:100%;
-    //min-height:calc(100vh - (64px + 48px));
-    //font-family: $font-sans-serif;
-
-    figure{
-        padding:0;
-        margin:0 0 16px;
-
-        img{
-            display:block;
-            width:100%;
-            height:auto !important;
-        }
-    }
-
-    dl{
-        margin:0 0 16px;
-
-        dt{
-            margin:0;
-            padding:0;
-            font-size:18px;
-        }
-
-        dd{
-            margin:0;
-            padding:0;
-
-            ul{
-                li{
-                    margin-bottom:4px;
-
-                    &:last-child{
-                        margin-bottom:0;
-                    }
-
-                    a{
-
-                    }
-                }
-            }
-        }
-    }
-}
+//article{
+//    width:100%;
+//    //min-height:calc(100vh - (64px + 48px));
+//    //font-family: $font-sans-serif;
+//
+//    figure{
+//        padding:0;
+//        margin:0 0 16px;
+//
+//        img{
+//            display:block;
+//            width:100%;
+//            height:auto !important;
+//        }
+//    }
+//
+//    dl{
+//        margin:0 0 16px;
+//
+//        dt{
+//            margin:0;
+//            padding:0;
+//            font-size:18px;
+//        }
+//
+//        dd{
+//            margin:0;
+//            padding:0;
+//
+//            ul{
+//                li{
+//                    margin-bottom:4px;
+//
+//                    &:last-child{
+//                        margin-bottom:0;
+//                    }
+//
+//                    a{
+//
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 </style>

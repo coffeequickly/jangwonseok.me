@@ -22,53 +22,53 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'assets/partialAsset';
-
-article{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100vw;
-    height:100vh;
-    overflow: hidden;
-    background-color: $color-green-600;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-
-    &.error{
-        background-color: $color-dark-200;
-    }
-
-    div{
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        *{
-            font-size:16px;
-            font-weight:normal;
-            font-family: $font-sans-serif;
-        }
-
-        h1, p{
-            color:$color-light-100;
-            font-weight:100;
-        }
-
-        h1{
-            font-size:32px;
-        }
-
-        p{
-            font-size:13px;
-        }
-
-        a{
-            display:inline-block;
-            text-align: center;
-        }
-    }
-}
+//@import 'assets/partialAsset';
+//
+//article{
+//    position:fixed;
+//    top:0;
+//    left:0;
+//    width:100vw;
+//    height:100vh;
+//    overflow: hidden;
+//    background-color: $color-green-600;
+//    display:flex;
+//    justify-content: center;
+//    align-items: center;
+//
+//    &.error{
+//        background-color: $color-dark-200;
+//    }
+//
+//    div{
+//        display:flex;
+//        flex-direction: column;
+//        justify-content: center;
+//        align-items: center;
+//
+//        *{
+//            font-size:16px;
+//            font-weight:normal;
+//            font-family: $font-sans-serif;
+//        }
+//
+//        h1, p{
+//            color:$color-light-100;
+//            font-weight:100;
+//        }
+//
+//        h1{
+//            font-size:32px;
+//        }
+//
+//        p{
+//            font-size:13px;
+//        }
+//
+//        a{
+//            display:inline-block;
+//            text-align: center;
+//        }
+//    }
+//}
 </style>
