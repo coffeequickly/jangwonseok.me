@@ -93,9 +93,14 @@ header{
                 font-weight:300;
                 color:$color-dark-500;
                 font-style: italic;
+                text-align: center;
 
                 &:last-child{
                     margin-right:0;
+                }
+
+                &:hover{
+                    text-decoration: underline;
                 }
             }
         }

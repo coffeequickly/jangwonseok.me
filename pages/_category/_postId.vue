@@ -1,42 +1,22 @@
 <template>
-    <div v-if="this.loading" style="width:100%;">
-        <div v-if="this.$route.params.postId && this.$route.params.category">
-            <header class="post-header">
-                <h1>
-                    <PuSkeleton :count="1" height="84px" width="100%"/>
-                </h1>
-            </header>
-            <section class="post-content">
-                <PuSkeleton :count="1" height="1000px" width="100%"/>
-            </section>
-        </div>
-
-        <ul class="list">
-            <li v-for="n in 10">
-                <PuSkeleton :count="1" height="150px" width="100%"/>
-            </li>
-        </ul>
-    </div>
-
-    <!--    <div v-if="this.$route.params.postId && this.$route.params.category">-->
-    <article v-else-if="this.post" class="post">
+    <article v-if="this.post" class="post">
         <header class="post-header">
-            <h1 v-html="this.post.title.rendered"></h1>
+            <div v-if="!!this.post.better_featured_image">
+                <div class="thumbnail" v-if="!!this.post.better_featured_image.media_details.sizes.medium_large" :style="{background : 'url('+ this.post.better_featured_image.media_details.sizes.medium_large.source_url +')no-repeat'}"/>
+                <div class="thumbnail" v-else="!!this.post.better_featured_image" :style="{background : 'url('+ this.post.better_featured_image.source_url +')no-repeat'}"/>
+            </div>
+            <div class="thumbnail" v-else></div>
+
+            <div class="title-wrap">
+                <h1>
+                    <strong v-html="this.post.title.rendered"/>
+                    <span v-html="this.meta.content"/>
+                </h1>
+                <span class="author">장 원석 — {{this.moment(this.post.date).format('YYYY. MM. DD.')}}</span>
+            </div>
         </header>
         <section class="post-content" v-html="this.post.content.rendered"></section>
     </article>
-    <!--    </div>-->
-
-    <ul v-else class="list">
-        <li v-for="(list, index) in this.postList" :key="index">
-            <nuxt-link :to="$route.params.category+'/'+list.id">
-                <dl>
-                    <dt v-html="list.title.rendered"></dt>
-                    <dd v-html="list.excerpt.rendered"></dd>
-                </dl>
-            </nuxt-link>
-        </li>
-    </ul>
 </template>
 
 <script>
@@ -46,6 +26,7 @@ export default {
     name: "postId",
     layout: 'post',
     fetchOnServer : true,
+
     data(){
       return {
           meta : {
@@ -60,53 +41,14 @@ export default {
     },
 
     methods: {
-        async getCategories(){
-            await this.$axios.get('/categories').then(result =>{
-                let categoryArrange = {};
-                result.data.forEach(item => {
-                    categoryArrange[item.slug] = item.id;
-                })
-                this.categories = categoryArrange;
-            });
-        },
-
-
         async getPost(){
-            await this.getCategories();
-
             this.loading = true;
-            let endpoint = '/posts/'
-            const category = this.$route.params.postId ? null : this.$route.params.category,
-                postId = this.$route.params.postId
-
-            if(category){
-                endpoint += '?categories=' + this.categories[category];
-            }
-
-            if(postId){
-                endpoint += postId;
-            }else if(category){
-                endpoint += '&per_page=100';
-            }else{
-                endpoint += '?per_page=100';
-            }
+            let endpoint = '/posts/' + this.$route.params.postId;
 
             await this.$axios.get(endpoint).then(result => {
-                if(postId){
-                    this.post = result.data;
-                    this.meta.title = entities.decode(result.data.title.rendered);
-                    this.meta.content = entities.decode(result.data.excerpt.rendered.replace(/<\/?p>/g, ''));
-                }else{
-                    this.postList = result.data;
-                    let title = '';
-                    if(category === 'logs'){
-                        title = '탐구생활'
-                    }else{
-                        title = '고민고민'
-                    }
-                    this.meta.title = 'Article List > #'+title;
-                }
-
+                this.post = result.data;
+                this.meta.title = entities.decode(result.data.title.rendered);
+                this.meta.content = entities.decode(result.data.excerpt.rendered.replace(/<\/?p>/g, ''));
                 this.loading = false;
             })
         },
@@ -132,8 +74,186 @@ export default {
 </script>
 
 <style scoped lang="scss">
-//@import 'assets/partialAsset';
-//
+@import 'assets/partialAsset';
+article {
+    margin: auto;
+    width: $width-large;
+    padding: 64px 32px;
+    box-sizing: border-box;
+
+    .post-header{
+        width:100%;
+
+        .thumbnail{
+            position:relative;
+            margin:0 -64px;
+            height:500px;
+            background-size: cover !important;
+            background-position: center center !important;
+
+            &:before{
+                content:'';
+                display:block;
+                width:100%;
+                height:100%;
+                background-color: $color-dark-500;
+                opacity: 0.1;
+            }
+        }
+
+        .title-wrap{
+            position:relative;
+            background-color: $color-light-100;
+            z-index:2;
+            top:-50%;
+            margin-bottom:-5%;
+            padding:32px;
+            word-break: keep-all;
+            width:$width-normal;
+            box-sizing: border-box;
+            transform: translateY(-50%);
+
+            h1{
+                margin:0 0 16px;
+
+                strong{
+                    font-size:32px;
+                    display:block;
+                    font-weight:900;
+                    margin-bottom:8px;
+                }
+
+                span{
+                    font-size:16px;
+                    display:block;
+                    font-weight:300;
+                    color:$color-dark-200;
+                    font-style: italic;
+                }
+            }
+
+            .author{
+                display:inline-block;
+                margin:8px 0 0;
+                width:100%;
+                padding:0;
+                font-size:14px;
+                color:$color-dark-200;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .post-content{
+        position:relative;
+        width: $width-content;
+        margin:auto auto 64px;
+        //margin-bottom:64px;
+        font-family: $font-serif;
+        font-weight:300;
+
+        ::v-deep{
+            a{
+                color:$color-red-300;
+                text-decoration: underline;
+            }
+
+            p{
+                font-size:17px;
+                line-height:1.6;
+                word-break: break-word;
+            }
+
+            strong{
+                font-weight:400;
+            }
+
+            h2, h3{
+                display:inline-block;
+                font-weight:900;
+                font-family: $font-sans-serif;
+                font-size:32px;
+                margin:32px 0 16px;
+            }
+
+            & > ul{
+                background-color: $color-light-200;
+                margin:32px 0;
+                padding:32px 64px 32px;
+                box-sizing: border-box;
+                border:1px solid $color-light-300;
+                border-radius:2px;
+                font-family: $font-sans-serif;
+
+                li{
+                    margin-bottom:8px;
+
+                    &:last-child{
+                        margin-bottom:0;
+                    }
+
+                    ul{
+                        margin:16px 0;
+                    }
+                }
+            }
+
+            figure{
+                position:relative;
+                display:inline-block;
+                //max-width:100%;
+                //width:auto;
+                border:1px solid $color-light-300;
+                box-sizing: border-box;
+                background-color: $color-light-100;
+                margin:0 auto 32px;
+                width:auto;
+                text-align: center;
+
+                img{
+                    display:block;
+                    height:auto;
+                    max-width:100%;
+                    box-sizing: border-box;
+                }
+
+                figcaption{
+                    //display:block;
+                    font-size:13px;
+                    font-family: $font-sans-serif;
+                    //width:100%;
+                    //max-width:$width-normal;
+                    padding:16px;
+                    border-top:1px solid $color-light-300;
+                    box-sizing: border-box;
+                    font-style: italic;
+                    font-weight:400;
+
+                    a{
+                        display:inline-block;
+                        margin:4px 0;
+                    }
+                }
+            }
+
+            code {
+                display: inline-flex;
+                align-content: center;
+                color: $color-red-300;
+                background-color: $color-light-200;
+                border: 1px solid $color-light-300;
+                padding: 0 8px;
+                box-sizing: border-box;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 13px;
+                word-break: break-all;
+                font-family: "Courier New", monospace;
+            }
+        }
+    }
+}
+
 //article.post {
 //    width: 100%;
 //

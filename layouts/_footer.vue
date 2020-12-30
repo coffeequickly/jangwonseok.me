@@ -9,14 +9,19 @@
             </dl>
 
             <dl>
-                <dt>Thanks to</dt>
+                <dt>Build Set</dt>
                 <dd>Amazon Web Service</dd>
                 <dd>Wordpress - Backend restfulAPI</dd>
                 <dd>Nuxt.js - Easy front-end bootstrap with SSR</dd>
             </dl>
-
-            <p>© Wonseok Jang</p>
+            <dl class="links">
+                <dd><a href="https://github.com/coffeequickly" target="_blank">Github</a></dd>
+                <dd><a href="https://www.behance.net/coffeequickly" target="_blank">Behance</a></dd>
+                <dd><a href="/introduce.pdf" target="_blank">Introduce & Resume</a></dd>
+                <dd><a href="mailto:contact@jangwonseok.me" target="_blank">contact@jangwonseok.me</a></dd>
+            </dl>
         </div>
+        <p>© Wonseok Jang</p>
     </footer>
 </template>
 
@@ -38,115 +43,68 @@ footer{
 
     .footer-wrap{
         width:$width-large;
-        //text-align: center;
-        margin:32px auto;
-        padding:32px;
+        margin:auto;
+        padding:32px 0;
         box-sizing: border-box;
+        display:flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        align-items: stretch;
+
 
         dl{
             margin:0;
-            width:100%;
+            padding:0 16px;
+            width:auto;
             font-size:12px;
 
+            &.links{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                margin-left:auto;
+
+                dd{
+                    display:inline-block;
+                    margin:0;
+                    padding:0 8px;
+                }
+            }
+
             dt{
-                margin:0;
-                color:$color-light-300;
+                margin:0 0 8px;
+                padding:0;
+                color:$color-light-200;
             }
 
             dd{
-                color:$color-light-300;
+                margin:0 0 4px;
+                padding:0;
+                color:$color-light-500;
+
+                &:last-child{
+                    margin-bottom:0;
+                }
+
+                a{
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
-}
 
-//footer{
-//    width:100%;
-//    padding:4px 16px;
-//    box-sizing: border-box;
-//    //border-top:1px solid $color-light-300;
-//    background-color: $color-light-200;
-//
-//
-//    a{
-//        text-decoration: none;
-//
-//        &:hover{
-//            color:$color-green-300;
-//        }
-//    }
-//
-//    button{
-//        -webkit-appearance:none;
-//        border:0;
-//        display:none;
-//        box-shadow:none;
-//        outline:none !important;
-//        background-color: transparent;
-//        position:fixed;
-//        bottom:16px;
-//        right:16px;
-//        cursor: pointer;
-//        width:24px;
-//        height:24px;
-//        align-content: center;
-//        justify-content: center;
-//        align-items: center;
-//        padding:0;
-//        margin:0;
-//
-//        @media (max-width:$width-normal) {
-//            display:flex;
-//        }
-//
-//        ::v-deep svg{
-//            width:100%;
-//            height:100%;
-//            background-color: $color-light-100;
-//            border-radius: 4px;
-//            overflow: hidden;
-//
-//            path{
-//                fill:$color-green-600;
-//            }
-//        }
-//    }
-//
-//    dl{
-//        display:flex;
-//        flex-direction: row;
-//        align-content: center;
-//        justify-content: center;
-//        font-style: italic;
-//        font-size:12px;
-//        font-weight:normal;
-//        flex-wrap:wrap;
-//
-//        span{
-//            margin-right:8px;
-//        }
-//
-//        dt{
-//            margin:0 0 8px;
-//            padding:0;
-//            width:100%;
-//            text-align: center;
-//
-//            em{
-//                font-size:12px;
-//                font-weight:normal;
-//            }
-//        }
-//
-//        dd{
-//            margin:0 8px;
-//            padding:0;
-//
-//            @media(max-width:$width-normal){
-//                width:100%;
-//                text-align: center;
-//            }
-//        }
-//    }
-//}
+    p{
+        width:100%;
+        color:$color-light-100;
+        border-top:1px solid $color-dark-400;
+        text-align: center;
+        margin:16px 0 0;
+        padding:16px 0;
+        font-size:10px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+    }
+}
 </style>
