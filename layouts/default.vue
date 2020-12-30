@@ -12,7 +12,7 @@
 @import 'assets/partialAsset';
 .page-layout{
     &.about{
-        background-color: #000000;
+        background-color: $color-dark-500;
     }
 }
 

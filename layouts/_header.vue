@@ -6,7 +6,11 @@
                 <svg-inline src="~assets/jangwonseok.svg"/>
                 <span>archive!</span>
             </nuxt-link>
-            <navigator/>
+            <navigator :class="{ active : this.nav }" />
+
+            <button class="button-clear toggle-navigation" @click.prevent="toggleNav">
+                <svg-inline src="~assets/icon/menu.svg" :class="{ active : this.nav }" />
+            </button>
         </div>
     </header>
     </client-only>
@@ -18,6 +22,13 @@ import Navigator from "@/components/navigator";
 export default {
     name: "headerDefault",
     components: {Navigator},
+
+    computed : {
+        nav(){
+            return this.$store.state.nav;
+        }
+    },
+
     methods : {
         toggleNav(){
             this.$store.commit('SET_NAV');
@@ -40,12 +51,22 @@ header{
     border-bottom:1px solid $color-light-300;
     z-index:9;
 
+    @media (max-width:$width-normal) {
+        height:50px;
+    }
+
     .header-wrap{
         display:flex;
         width:1540px;
         margin:auto;
         padding:0 32px;
         box-sizing: border-box;
+        align-items: center;
+
+        @media (max-width:$width-normal) {
+            padding:0 16px;
+            width:100%;
+        }
 
         .brand{
             position:relative;
@@ -54,6 +75,10 @@ header{
             align-items: center;
             height:48px;
             box-sizing: border-box;
+
+            @media (max-width:$width-normal) {
+                height:40px;
+            }
 
             &:hover{
                 ::v-deep svg{
@@ -79,6 +104,11 @@ header{
                 font-size:24px;
                 font-style: italic;
                 margin-left:16px;
+
+                @media (max-width:$width-normal) {
+                    font-size:16px;
+                    margin-left:8px;
+                }
             }
         }
 
@@ -87,6 +117,22 @@ header{
             flex-direction: row;
             margin-left:auto;
             align-items: center;
+
+            @media (max-width:$width-normal) {
+                display:none;
+                height:100vh;
+                position:fixed;
+                top:50px;
+                left:0;
+                width:100%;
+                background-color: $color-light-100;
+                flex-direction: column;
+
+                &.active{
+                    display:flex;
+                }
+            }
+
 
             ::v-deep a{
                 display: inline-block;
@@ -97,6 +143,14 @@ header{
                 font-style: italic;
                 text-align: center;
 
+                @media (max-width:$width-normal) {
+                    margin:0;
+                    padding:16px;
+                    box-sizing: border-box;
+                    border-bottom:1px solid $color-light-300;
+                    width:100%;
+                }
+
                 &:last-child{
                     margin-right:0;
                 }
@@ -104,132 +158,76 @@ header{
                 &:hover{
                     text-decoration: underline;
                 }
+
+                &.is-active{
+                    @media (max-width:$width-normal) {
+                        background-color: $color-blue-500;
+                        color:$color-light-100;
+                        font-weight:bold;
+                    }
+                }
+            }
+        }
+
+        .toggle-navigation{
+            position:relative;
+            top:-2px;
+            display:none;
+            align-items: center;
+            justify-content: center;
+            width:36px;
+            height:36px;
+            margin-left:auto;
+
+            @media(max-width:$width-normal){
+                display:flex;
+            }
+
+            ::v-deep svg{
+                width:32px;
+                height:32px;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+
+                .svg-menu-toggle {
+                    fill:$color-dark-500;
+                    pointer-events:all; //needs to be there so the hover works
+
+                    .bar {
+                        transform:rotate(0) translateY(0) translateX(0);
+                        opacity:1;
+                        transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+
+                        &:nth-of-type(1) {
+                            transform-origin: 20px 10px;
+                        }
+
+                        &:nth-of-type(3) {
+                            transform-origin: 20px 20px;
+                        }
+                    }
+                }
+
+                &.active{
+                    .svg-menu-toggle {
+                        .bar:nth-of-type(1) {
+                            -webkit-transform:rotate(-45deg) translateY(0) translateX(0);
+                            transform:rotate(-45deg) translateY(0) translateX(0);
+                        }
+                        .bar:nth-of-type(2) {
+                            opacity:0;
+                        }
+
+                        .bar:nth-of-type(3) {
+                            -webkit-transform:rotate(45deg) translateY(0em) translateX(0em);
+                            transform:rotate(45deg) translateY(0em) translateX(0em);
+
+                        }
+                    }
+                }
             }
         }
     }
 }
-
-//header {
-//    display: block;
-//    top: 0;
-//    left: 0;
-//    position: fixed;
-//    box-sizing: border-box;
-//    z-index: 9;
-//    width: 100%;
-//    background-color: rgba(255, 255, 255, 0.8);
-//
-//    @media(max-width: $width-normal) {
-//        position: relative;
-//        justify-content: center;
-//        flex-wrap: wrap;
-//        background-color: $color-green-600;
-//        height: auto;
-//    }
-//
-//    .header-wrap {
-//        position:relative;
-//        display: flex;
-//        flex-direction: row;
-//        justify-content: flex-start;
-//        align-content: center;
-//        height: 64px;
-//        width: 100%;
-//        padding: 16px;
-//        box-sizing: border-box;
-//
-//        @media(max-width: $width-normal) {
-//            justify-content: center;
-//            padding: 8px 16px;
-//            height: auto;
-//        }
-//
-//        button.open-navigation {
-//            position: absolute;
-//            top: 50%;
-//            left: 4px;
-//            display: none;
-//            justify-content: center;
-//            align-items: center;
-//            border: 0;
-//            box-shadow: none;
-//            background-color: transparent;
-//            transform: translateY(-50%);
-//            -webkit-appearance: none;
-//            outline: none !important;
-//
-//            @media(max-width: $width-normal) {
-//                display: flex;
-//            }
-//
-//            ::v-deep svg {
-//                width: 24px;
-//                height: 24px;
-//
-//                path {
-//                    fill: $color-light-100;
-//                }
-//            }
-//        }
-//
-//        a.home {
-//            ::v-deep svg {
-//                width: 32px;
-//                height: 32px;
-//                display: block;
-//
-//                @media(max-width: $width-normal) {
-//                    path[fill="#303D26"] {
-//                        fill: $color-light-200;
-//                    }
-//
-//                    path[fill="#FCFCFB"] {
-//                        fill: $color-green-600;
-//                    }
-//                }
-//            }
-//        }
-//    }
-//
-//    .mobile-nav{
-//        width: 100%;
-//        display: none;
-//        position:relative;
-//        flex-direction: column;
-//        border-bottom:1px solid $color-dark-300;
-//        margin-bottom:-1px;
-//        background-color: $color-light-100;
-//        overflow:hidden;
-//
-//        ::v-deep a{
-//            display:block;
-//            width:100% !important;
-//            margin:0;
-//            padding:8px;
-//            border-bottom:1px solid $color-light-300;
-//
-//            &:last-child{
-//                border-bottom:0;
-//            }
-//        }
-//
-//        @media(max-width: $width-normal) {
-//            display: flex;
-//        }
-//    }
-//
-//    .nav {
-//        position: absolute;
-//        top: 16px;
-//        right: 16px;
-//        display: flex;
-//        flex-direction: row;
-//        justify-content: space-between;
-//        align-items: center;
-//
-//        @media(max-width: $width-normal) {
-//            display:none;
-//        }
-//    }
-//}
 </style>

@@ -26,11 +26,20 @@ html body {
         width:$width-large;
         margin:0 auto;
 
+        @media(max-width:$width-normal){
+            padding-top:50px;
+            width:100%;
+        }
+
         section.post-list-wrap{
             margin:0;
             width:100%;
             padding:64px 32px;
             box-sizing: border-box;
+
+            @media(max-width:$width-normal){
+                padding:16px 8px;
+            }
 
             dl{
                 margin:0;
@@ -43,6 +52,11 @@ html body {
                     letter-spacing: -1px;
                     box-sizing: border-box;
                     margin-bottom:32px;
+
+                    @media(max-width:$width-normal){
+                        font-size:32px;
+                        margin-bottom:16px;
+                    }
                 }
 
                 dd.post-list{
@@ -54,6 +68,27 @@ html body {
                     padding:0;
                     width:100%;
 
+                    @media(max-width:$width-normal){
+                        width:100%;
+                        margin:0;
+                    }
+
+                    .placeholder{
+                        @media(max-width:$width-normal){
+                            //width:100%;
+                            display:none;
+                        }
+                    }
+
+                    .mobile-placeholder{
+                        display:none;
+                        width:100%;
+
+                        @media(max-width:$width-normal){
+                            display:block;
+                        }
+                    }
+
                     article{
                         position:relative;
                         display:block;
@@ -61,23 +96,32 @@ html body {
                         margin:32px 1% 0 0;
                         height:350px;
 
+                        @media(max-width:$width-normal){
+                            width:100%;
+                            height:auto;
+                            margin:-1px 0 0;
+                            padding:0;
+                            border-top:1px solid $color-light-300;
+                            border-bottom:1px solid $color-light-300;
+
+                            &:last-child{
+                                border-bottom:0;
+                            }
+                        }
+
                         &:nth-child(4n){
                             margin-right:0;
                         }
 
-                        //&:nth-child(1), &:nth-child(2){
-                        //    width:48.5%;
-                        //    height:auto;
-                        //    margin:32px 2% 0 0;
-                        //}
-
-                        span{
-                            display:block;
-                        }
-
                         a{
+                            position:relative;
                             display:block;
                             width:100%;
+
+                            @media(max-width:$width-normal){
+                                padding:32px 8px;
+                                box-sizing: border-box;
+                            }
 
                             &:hover{
                                 figure{
@@ -99,6 +143,15 @@ html body {
                                 width: 100%;
                                 padding-top: 60%;
                                 margin:0;
+
+                                @media(max-width:$width-normal){
+                                    width:80px;
+                                    height:80px;
+                                    padding:0;
+                                    margin-left:auto;
+                                    border-radius: 4px;
+                                    overflow: hidden;
+                                }
 
                                 .thumbnail{
                                     position: absolute;
@@ -137,6 +190,11 @@ html body {
                                         transform: translate(-50%, -50%);
                                         width:128px;
                                         height:128px;
+
+                                        @media(max-width:$width-normal){
+                                            width:60px;
+                                            height:60px;
+                                        }
                                     }
                                 }
 
@@ -159,6 +217,16 @@ html body {
                             .content{
                                 position:relative;
 
+                                @media(max-width:$width-normal){
+                                    position:absolute;
+                                    top:0;
+                                    left:0;
+                                    width:100%;
+                                    height:100%;
+                                    padding:16px 116px 16px 8px;
+                                    box-sizing: border-box;
+                                }
+
                                 .title{
                                     font-size:18px;
                                     word-break: keep-all;
@@ -168,6 +236,12 @@ html body {
                                     -webkit-box-orient: vertical;
                                     overflow: hidden;
                                     margin:16px 0 8px;
+
+                                    @media(max-width:$width-normal){
+                                        font-size:16px;
+                                        word-break: break-all;
+                                        margin:0 0 8px;
+                                    }
                                 }
 
                                 .excerpt{
@@ -180,6 +254,11 @@ html body {
                                         color:$color-dark-300;
                                         font-size:12px;
                                         font-weight:300;
+
+                                        @media(max-width:$width-normal){
+                                            -webkit-line-clamp: 3;
+                                            word-break: break-all;
+                                        }
                                     }
                                 }
                             }
@@ -193,6 +272,10 @@ html body {
                             left:0;
                             width:100%;
                             list-style: none;
+
+                            @media(max-width:$width-normal){
+                                display:none;
+                            }
 
                             li{
                                 display:inline-block;
