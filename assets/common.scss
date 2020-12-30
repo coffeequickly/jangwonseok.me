@@ -37,8 +37,8 @@ html body {
             padding:64px 32px;
             box-sizing: border-box;
 
-            @media(max-width:$width-normal){
-                padding:16px 8px;
+            @media(max-width:$width-normal) {
+                padding: 16px 0;
             }
 
             dl{
@@ -56,6 +56,7 @@ html body {
                     @media(max-width:$width-normal){
                         font-size:32px;
                         margin-bottom:16px;
+                        padding:0 16px;
                     }
                 }
 
@@ -69,8 +70,9 @@ html body {
                     width:100%;
 
                     @media(max-width:$width-normal){
-                        width:100%;
-                        margin:0;
+                        //width:100%;
+                        margin:0 -16px;
+                        padding:0 16px;
                     }
 
                     .placeholder{
@@ -100,7 +102,8 @@ html body {
                             width:100%;
                             height:auto;
                             margin:-1px 0 0;
-                            padding:0;
+                            padding:0 8px;
+                            box-sizing: border-box;
                             border-top:1px solid $color-light-300;
                             border-bottom:1px solid $color-light-300;
 
@@ -211,6 +214,7 @@ html body {
                                     box-sizing: border-box;
                                     opacity: 1;
                                     transition: all 0.3s ease-out;
+                                    display:none; // 임시처리
                                 }
                             }
 
@@ -223,7 +227,7 @@ html body {
                                     left:0;
                                     width:100%;
                                     height:100%;
-                                    padding:16px 116px 16px 8px;
+                                    padding:16px 100px 16px 8px;
                                     box-sizing: border-box;
                                 }
 
