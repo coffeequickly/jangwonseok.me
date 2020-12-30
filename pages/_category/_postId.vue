@@ -107,7 +107,7 @@ article {
             z-index:2;
             top:-50%;
             margin-bottom:-5%;
-            padding:32px;
+            padding:32px 64px;
             word-break: keep-all;
             width:$width-normal;
             box-sizing: border-box;

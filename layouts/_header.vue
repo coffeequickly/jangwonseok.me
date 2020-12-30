@@ -44,6 +44,8 @@ header{
         display:flex;
         width:1540px;
         margin:auto;
+        padding:0 32px;
+        box-sizing: border-box;
 
         .brand{
             position:relative;

@@ -3,22 +3,24 @@
         <div class="footer-wrap">
             <dl>
                 <dt>장 원석</dt>
-                <dd>사람들이 좋아하는 서비스를 만드는 걸 좋아합니다.</dd>
+                <dd>사람들이 좋아하는 서비스를 만들고 싶습니다.</dd>
                 <dd>새로운 기술 요소를 탐닉합니다. 욕심이 많아서 넓고 얉게 훑습니다.</dd>
                 <dd>글도 잘 쓰고 말도 잘 하고 싶습니다. 수다쟁이입니다.</dd>
             </dl>
 
+            <!--
             <dl>
                 <dt>Build Set</dt>
                 <dd>Amazon Web Service</dd>
-                <dd>Wordpress - Backend restfulAPI</dd>
-                <dd>Nuxt.js - Easy front-end bootstrap with SSR</dd>
+                <dd>Wordpress — Backend restfulAPI</dd>
+                <dd>Nuxt.js — Easy front-end bootstrap with SSR</dd>
             </dl>
+            -->
             <dl class="links">
-                <dd><a href="https://github.com/coffeequickly" target="_blank">Github</a></dd>
-                <dd><a href="https://www.behance.net/coffeequickly" target="_blank">Behance</a></dd>
-                <dd><a href="/introduce.pdf" target="_blank">Introduce & Resume</a></dd>
-                <dd><a href="mailto:contact@jangwonseok.me" target="_blank">contact@jangwonseok.me</a></dd>
+                <dd><a href="/introduce.pdf" target="_blank"><svg-inline src="~assets/icon/pdf.svg" />Introduce & Resume Download</a></dd>
+                <dd><a href="https://github.com/coffeequickly" target="_blank"><svg-inline src="~assets/icon/github.svg" />Github Profile</a></dd>
+                <dd><a href="https://www.behance.net/coffeequickly" target="_blank"><svg-inline src="~assets/icon/behance.svg" />Behance Profile</a></dd>
+                <dd><a href="mailto:contact@jangwonseok.me" target="_blank"><svg-inline src="~assets/icon/mail.svg" />contact@jangwonseok.me</a></dd>
             </dl>
         </div>
         <p>© Wonseok Jang</p>
@@ -39,6 +41,7 @@ export default {
 <style scoped lang="scss">
 @import 'assets/partialAsset';
 footer{
+    border-top:1px solid $color-dark-400;
     background-color: $color-dark-500;
 
     .footer-wrap{
@@ -49,7 +52,7 @@ footer{
         display:flex;
         flex-direction: row;
         flex-wrap:wrap;
-        align-items: stretch;
+        align-items: center;
 
 
         dl{
@@ -60,14 +63,37 @@ footer{
 
             &.links{
                 display: flex;
-                flex-direction: row;
-                align-items: flex-end;
+                flex-direction: column;
+                align-items: flex-start;
                 margin-left:auto;
 
                 dd{
-                    display:inline-block;
-                    margin:0;
-                    padding:0 8px;
+                    padding:2px 0;
+                    box-sizing: border-box;
+
+                    a{
+                        display:flex;
+                        align-items:center;
+                        font-weight:300;
+                        font-style:italic;
+                        color:$color-light-500;
+
+                        ::v-deep svg{
+                            display:inline-block;
+                            height:24px;
+                            width:auto;
+                            margin-right:16px;
+                            background-color: $color-dark-400;
+                            padding:5px;
+                            box-sizing: border-box;
+                            border-radius: 50%;
+
+                            path{
+                                fill : $color-light-300;
+                            }
+                        }
+                    }
+
                 }
             }
 
@@ -75,6 +101,8 @@ footer{
                 margin:0 0 8px;
                 padding:0;
                 color:$color-light-200;
+                font-weight:bold;
+                font-size:13px;
             }
 
             dd{

@@ -10,14 +10,14 @@ module.exports = {
     target: 'server',
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
-        title: 'Wonseok Jang - Service Oriented Web Software Engineer',
+        title: 'ARCHIVE JANGWONSEOK',
         meta: [
             {charset: 'utf-8'},
             {name: 'viewport', content: 'width=device-width, initial-scale=1'},
             {
                 hid: 'description',
                 name: 'description',
-                content: '포지션 경계가 명확해도 잘 하지만, 경계가 없으면 할 수 있는게 더 많습니다. 혼자 보다는 여럿이 함께 문제를 해결하는 것을 더 좋아하고, 새로운 것을 배우는데 두려워 하지 않습니다. 말 하는 것을 좋아하고 듣는 것도 더 좋아합니다. 사실 생각하고 만드는 걸 더 좋아하는데, 어쩌면 개발자가 천직인지도 모르겠습니다. '
+                content: '고민과 반성, 그리고 기록이 살아남는 방법이다.'
             },
             {
                 hid: 'og:image',

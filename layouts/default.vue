@@ -1,5 +1,5 @@
 <template>
-    <div class="page-layout">
+    <div class="page-layout" :class="this.$route.name">
         <header-default/>
         <main id="content-wrap">
             <Nuxt/>
@@ -10,10 +10,12 @@
 
 <style lang="scss" scoped>
 @import 'assets/partialAsset';
-
-#content-wrap{
-
+.page-layout{
+    &.about{
+        background-color: #000000;
+    }
 }
+
 </style>
 <script>
 
