@@ -57,7 +57,7 @@ module.exports = {
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: [
         {src : '~plugins/googleAnalytics.js', mode: 'client'},
-        // {src : '~plugins/fetch.js', mode: 'client'},
+        {src : '~plugins/common.js'},
         {src : '~plugins/svg-inline.js', mode: 'client'},
         {src : '~plugins/routeIntercept.js', mode: 'client'},
         {src : '~plugins/skeleton.js', mode: 'client'},
