@@ -221,6 +221,7 @@ article {
 
             h2, h3{
                 display:inline-block;
+                width:100%;
                 font-weight:900;
                 font-family: $font-sans-serif;
                 font-size:32px;
