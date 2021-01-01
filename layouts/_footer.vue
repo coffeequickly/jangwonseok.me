@@ -17,12 +17,12 @@
             </dl>
             -->
             <dl class="links">
-                <no-ssr>
+                <client-only>
                 <dd><a href="/introduce.pdf" target="_blank"><svg-inline src="~assets/icon/pdf.svg" />Introduce & Resume Download</a></dd>
                 <dd><a href="https://github.com/coffeequickly" target="_blank"><svg-inline src="~assets/icon/github.svg" />Github Profile</a></dd>
                 <dd><a href="https://www.behance.net/coffeequickly" target="_blank"><svg-inline src="~assets/icon/behance.svg" />Behance Profile</a></dd>
                 <dd><a href="mailto:contact@jangwonseok.me" target="_blank"><svg-inline src="~assets/icon/mail.svg" />contact@jangwonseok.me</a></dd>
-                </no-ssr>
+                </client-only>
             </dl>
         </div>
         <p>© Wonseok Jang</p>

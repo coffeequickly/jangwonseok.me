@@ -5,13 +5,15 @@
             <dt v-else>{{ this.listTitle }}</dt>
 
             <dd class="post-list" v-if="this.loading">
-                <article class="placeholder" v-for="n in 8" :key="n">
-                    <PuSkeleton :count="1" height="200px" width="100%" :style="{marginBottom : '8px'}"/>
-                    <div class="content">
-                        <PuSkeleton :count="1" height="54px" width="100%" :style="{marginTop : '16px', marginBottom : '8px'}"/>
-                        <PuSkeleton :count="1" height="36px" width="100%"/>
-                    </div>
-                </article>
+                <div>
+                    <article class="placeholder" v-for="n in 8" :key="n">
+                        <PuSkeleton :count="1" height="200px" width="100%" :style="{marginBottom : '8px'}"/>
+                        <div class="content">
+                            <PuSkeleton :count="1" height="54px" width="100%" :style="{marginTop : '16px', marginBottom : '8px'}"/>
+                            <PuSkeleton :count="1" height="36px" width="100%"/>
+                        </div>
+                    </article>
+                </div>
 
                 <PuSkeleton  v-for="n in 8" :key="n" :count="1" height="144px" width="100%" class="mobile-placeholder"/>
             </dd>
