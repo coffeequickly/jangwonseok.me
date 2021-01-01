@@ -54,7 +54,7 @@ export default {
         },
     },
 
-    async asyncData() {
+    async fetch() {
         await this.getPost();
     },
 

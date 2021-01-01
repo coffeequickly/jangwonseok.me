@@ -77,6 +77,9 @@ export default {
     },
     async fetch() {
         await this.getListAll();
+    },
+    mounted() {
+
     }
 }
 </script>
