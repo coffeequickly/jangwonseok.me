@@ -68,6 +68,7 @@ html body {
                     margin:-16px 0;
                     padding:0;
                     width:100%;
+                    box-sizing: border-box;
 
                     @media(max-width:$width-normal){
                         //width:100%;
