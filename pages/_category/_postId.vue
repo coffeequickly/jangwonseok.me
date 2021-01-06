@@ -234,7 +234,7 @@ article {
                 }
             }
 
-            & > ul{
+            & > ul, & > ol{
                 background-color: $color-light-200;
                 margin:32px 0;
                 padding:32px 64px 32px;
