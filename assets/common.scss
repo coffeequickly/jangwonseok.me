@@ -60,7 +60,7 @@ html body {
                     }
                 }
 
-                dd.post-list{
+                dd.post-list, .placeholder-wrap{
                     display:flex;
                     flex-direction: row;
                     flex-wrap:wrap;

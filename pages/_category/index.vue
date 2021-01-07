@@ -5,7 +5,7 @@
             <dt v-else>{{ this.listTitle }}</dt>
 
             <dd class="post-list" v-if="this.loading">
-                <div>
+                <div class="placeholder-wrap">
                     <article class="placeholder" v-for="n in 8" :key="n">
                         <PuSkeleton :count="1" height="200px" width="100%" :style="{marginBottom : '8px'}"/>
                         <div class="content">
