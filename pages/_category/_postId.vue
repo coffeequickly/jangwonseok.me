@@ -285,6 +285,7 @@ article {
                     height:auto;
                     max-width:100%;
                     box-sizing: border-box;
+                    margin:auto;
                 }
 
                 figcaption{
