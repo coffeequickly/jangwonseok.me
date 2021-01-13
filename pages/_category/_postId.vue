@@ -2,7 +2,7 @@
     <article v-if="this.post" class="post">
         <header class="post-header">
             <div v-if="!!this.post.better_featured_image">
-                <div class="thumbnail" v-if="!!this.post.better_featured_image.media_details.sizes.medium_large" :style="{background : 'url('+ this.post.better_featured_image.media_details.sizes.medium_large.source_url +')no-repeat'}"/>
+                <div class="thumbnail" v-if="!!this.post.better_featured_image.source_url" :style="{background : 'url('+ this.post.better_featured_image.source_url +')no-repeat'}"/>
                 <div class="thumbnail" v-else="!!this.post.better_featured_image" :style="{background : 'url('+ this.post.better_featured_image.source_url +')no-repeat'}"/>
             </div>
             <div class="thumbnail" v-else></div>
@@ -164,7 +164,7 @@ article {
                         margin:0 -16px;
                         letter-spacing: -0.5px;
                         font-size:14px;
-                        padding:16px 8px;
+                        padding:16px 16px;
                         box-sizing: border-box;
                     }
                 }
@@ -193,6 +193,7 @@ article {
         //margin-bottom:64px;
         font-family: $font-serif;
         font-weight:300;
+        text-align: center;
 
         @media(max-width:$width-normal){
             width:100%;
@@ -208,6 +209,7 @@ article {
                 font-size:17px;
                 line-height:1.6;
                 word-break: break-word;
+                text-align: left;
 
                 @media(max-width:$width-normal){
                     font-size:14px;
@@ -226,6 +228,7 @@ article {
                 font-family: $font-sans-serif;
                 font-size:32px;
                 margin:32px 0 16px;
+                text-align: left;
 
                 @media(max-width:$width-normal){
                     margin:16px 0 8px;
@@ -273,7 +276,7 @@ article {
                 border:1px solid $color-light-300;
                 box-sizing: border-box;
                 background-color: $color-light-100;
-                margin:0 auto 32px;
+                margin:24px auto 32px;
                 width:auto;
                 text-align: center;
 
@@ -290,15 +293,18 @@ article {
                     font-family: $font-sans-serif;
                     //width:100%;
                     //max-width:$width-normal;
-                    padding:16px;
+                    padding:8px 16px;
                     border-top:1px solid $color-light-300;
                     box-sizing: border-box;
                     font-style: italic;
                     font-weight:400;
+                    background-color: $color-light-200;
 
                     a{
                         display:inline-block;
                         margin:4px 0;
+                        word-break: break-all;
+                        font-size:11px;
                     }
                 }
             }
