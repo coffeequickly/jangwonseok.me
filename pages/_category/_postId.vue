@@ -245,6 +245,7 @@ article {
                 border:1px solid $color-light-300;
                 border-radius:2px;
                 font-family: $font-sans-serif;
+                text-align: left;
 
                 @media(max-width:$width-normal){
                     margin:16px 0;
