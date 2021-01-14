@@ -31,7 +31,8 @@ export default {
       return {
           meta : {
               title : null,
-              content : null
+              content : null,
+              thumbnail : 'https://jangwonseok.me/meta/jangwonseok.me.jpg'
           },
           postList : [],
           post : null,
@@ -46,10 +47,21 @@ export default {
             let endpoint = '/posts/' + this.$route.params.postId;
 
             await this.$axios.get(endpoint).then(result => {
+                console.log(result.data);
+
                 this.post = result.data;
                 this.meta.title = entities.decode(result.data.title.rendered);
                 this.meta.content = entities.decode(result.data.excerpt.rendered.replace(/<\/?p>/g, ''));
                 this.loading = false;
+
+
+                if(result.data.better_featured_image.media_details.sizes.medium){
+                    this.meta.thumbnail = result.data.better_featured_image.media_details.sizes.medium.source_url;
+                }else if(result.data.better_featured_image.media_details.sizes.medium_large){
+                    this.meta.thumbnail = result.data.better_featured_image.media_details.sizes.medium_large.source_url;
+                }else if(result.data.better_featured_image.source_url){
+                    this.meta.thumbnail = result.data.better_featured_image.source_url;
+                }
             })
         },
     },
@@ -66,7 +78,12 @@ export default {
                     hid: 'description',
                     name: 'description',
                     content: this.meta.content
-                }
+                },
+                {
+                    hid: 'og:image',
+                    name: 'og:image',
+                    content: this.meta.thumbnail
+                },
             ]
         }
     },
